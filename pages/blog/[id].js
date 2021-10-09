@@ -28,11 +28,27 @@ export const getStaticPaths = async () => {
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "blog", contentId: id });
+
+  // draftKeyを取得し、クエリを作成する
+  const draftKey = context.previewData?.draftKey
+    ? { draftKey: context.previewData.draftKey }
+    : {};
+
+  const data = await client.get({
+    endpoint: "blog",
+    contentId: id,
+    queries: draftKey,
+  });
+
+  // 記事が存在しなければ404エラーを返す
+  if (!data) {
+    return { notFound: true }
+  }
 
   return {
     props: {
       blog: data,
+      ...draftKey
     },
   };
 };
