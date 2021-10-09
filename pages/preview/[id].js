@@ -4,6 +4,7 @@ import styles from '../../styles/Home.module.scss';
 export default function BlogId({ blog }) {
   return (
     <main className={styles.main}>
+      ※Preview mode
       <h1 className={styles.title}>{blog.title}</h1>
       <p className={styles.publishedAt}>{blog.publishedAt}</p>
       <p className="category">{blog.category && `${blog.category.name}`}</p>
@@ -21,7 +22,7 @@ export default function BlogId({ blog }) {
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
 
-  const paths = data.contents.map((content) => `/blog/${content.id}`);
+  const paths = data.contents.map((content) => `/preview/${content.id}`);
   return { paths, fallback: false };
 };
 
@@ -29,14 +30,26 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.id;
 
+  // draftKeyを取得し、クエリを作成する
+  const draftKey = context.previewData?.draftKey
+    ? { draftKey: context.previewData.draftKey }
+    : {};
+
   const data = await client.get({
     endpoint: "blog",
     contentId: id,
+    queries: draftKey,
   });
+
+  // 記事が存在しなければ404エラーを返す
+  if (!data) {
+    return { notFound: true }
+  }
 
   return {
     props: {
       blog: data,
+      ...draftKey
     },
   };
-};
+}
