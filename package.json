@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "material-ui": "^1.0.0-beta.47",
     "microcms-js-sdk": "^1.2.0",
     "next": "11.1.2",
     "react": "17.0.2",

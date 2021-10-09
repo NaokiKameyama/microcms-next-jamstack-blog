@@ -1,23 +1,12 @@
 import Link from "next/link";
 import { client } from "../libs/client";
 import Head from 'next/head'
+import Card from '../components/card'
+import Home from '../components/home'
 
-export default function Home({ blog }) {
+export default function Home2({ blog }) {
   return (
-    <div>
-      <Head>
-        <title>あつかんブログ</title>
-      </Head>
-      <ul>
-        {blog.map((blog) => (
-          <li key={blog.id}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>{blog.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Home blog={blog} />
   );
 }
 
