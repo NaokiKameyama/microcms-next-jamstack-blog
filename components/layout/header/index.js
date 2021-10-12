@@ -7,7 +7,7 @@ const Header = () => {
       <header className={s['header']}>
         <div className={s["inner"]}>
           <h1>あつかんブログ 🐶</h1>
-          <nav class="pc-nav">
+          <nav>
             <ul>
                 <li><a href="#">IT</a></li>
                 <li><a href="#">MONEY</a></li>
