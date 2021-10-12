@@ -10,13 +10,28 @@ export default function Home({ blog }) {
       <Head>
         <title>あつかんブログ</title>
       </Head>
-        <div className={s['blog-card-list']}>
+      <div className={s['home-container']}>
+        <div className={s['blog-card-list-container']}>
             {blog.map((blog) => (
-              <div className={s['blog-card']} key={blog.id}>
+              <div key={blog.id}>
                 <Card blog={blog} />
               </div>
             ))}
         </div>
+        <div className={s['sub-container']}>
+          <div className={s['sub-container-profile']}>
+              <div className={s['sub-container-profile-above']}>
+                画像
+              </div>
+              <div className={s['sub-container-profile-botom']}>
+                あああああああああああああああああああああああああああああああああ
+              </div>
+              <div className={s['circle']}>
+                <span>sample</span>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
