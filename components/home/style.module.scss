@@ -1,44 +1,96 @@
-.home-container{
+.home{
   width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.blog-card-list-container {
-  width: 65%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.sub-container{
-  background-color: red;
-  width: 35%;
-
-  .sub-container-profile{
-    width: 90%;
-    height: 500px;
-    // margin-left: auto;
-    // margin-right: auto;
-    margin: 20px auto;
-    background-color: blue;
-    position: relative;
-    .sub-container-profile-above{
-      height: 40%;
-      background-color: chartreuse;
+  display: inline-flex;
+  padding: auto;
+  .aaa{
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    .bbb{
+      display: flex;
+      align-items: center;
+      width: 85%;
+      margin-left: auto;
+      margin-right: auto;
+      &:before,
+      &:after {
+        content: '';
+        flex-grow: 1;/* 余白を分け与える */
+        height: 2px;
+        background: rgb(0, 0, 0);
+      }
+      &:before {
+        margin-right: 30px;
+      }
+      &:after {
+        margin-left: 30px;
+      }
+    }
+    .blog-card-list-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+  .sub-container{
+    width: 350px;
+    .sub-container-profile{
+      .sub-container-profile-above{
+        width: 100%;
+      }      
+      .circle-box{
+        height: 30px;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        .circle{
+          vertical-align: middle;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          border: solid 3px #fff;
+          margin-top: -50px;
+        }
+      }
     }
     .sub-container-profile-botom{
-      height: 60%;
-      background-color: yellow;
-    }
-    .circle{
-      position: absolute;
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: skyblue;
-      top: 145px;
+      padding: 20px;
+      padding-top: 0;
+      height: 360px;
+      background-color: white;
+      .name{
+        padding: 20px;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .profile-description{
+        a{
+          color: #1DA1F2;
+          font-weight: bold;
+        }
+      }
+      .icon-container{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #1DA1F2;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .twitter-icon{
+          margin-top: 3px;
+          font-size: 36px;
+          color: white;
+        }
+      }
     }
   }
 }
+
+

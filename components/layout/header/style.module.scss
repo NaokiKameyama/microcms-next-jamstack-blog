@@ -1,3 +1,35 @@
+.header {
+  background: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 18%);
+  .inner {
+    width: 1150px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    h1{
+      padding: 0 30px;
+    }
+    nav {
+      margin: 0 0 0 auto;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        display: flex;
+    }
+    li {
+        margin: 40px 0 0 15px;
+        font-size: 20px;
+    }
+  }
+}
+
+
+
+
 .toolbarMargin {
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
