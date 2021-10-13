@@ -14,8 +14,9 @@ const Header = () => {
           </div>
           <nav>
             <ul>
-                <li><a href="#">IT</a></li>
+                <li><a href="#">TECH</a></li>
                 <li><a href="#">MONEY</a></li>
+                <li><a href="#">WORK</a></li>
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">CONTACT</a></li>
             </ul>

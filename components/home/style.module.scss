@@ -1,3 +1,21 @@
+.top-container{
+  width: 100%;
+  height: 250px;
+  color: white;
+  // background-color: #93d1f0;
+  background: linear-gradient(45deg, #bdb9ff, #67b8ff);
+  margin-bottom: 45px;
+  display: inline-flex;
+  .top-left-container{
+    width: 50%;
+    padding: 18px;
+  }
+  .top-right-container{
+    margin: auto 5% auto auto;
+    width: 50%;
+    font-size: 22px;
+  }
+}
 .home{
   width: 100%;
   display: inline-flex;
@@ -52,7 +70,7 @@
   }
   .sub-container{
     margin-left: 30px;
-    height: 600px;
+    height: 610px;
     width: 30%;
     background-color: white;
     .sub-container-profile{
@@ -93,23 +111,38 @@
           font-weight: bold;
         }
       }
-      .icon-container{
-        width: 100%;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #1DA1F2;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
+      .icon-container-aaa{
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        .twitter-icon{
-          margin-top: 3px;
-          font-size: 36px;
-          color: white;
+        .icon-container{
+          margin: 20px;
+          background-color: #1DA1F2;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .twitter-icon{
+            margin-top: 3px;
+            font-size: 36px;
+            color: white;
+          }
+        }
+        .icon-container2{
+          margin: 20px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .github-icon{
+            margin-top: 3px;
+            font-size: 47px;
+          }
         }
       }
     }
