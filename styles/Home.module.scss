@@ -1,6 +1,8 @@
 .main {
-  width: 960px;
+  width: 100%;
   margin: 0 auto;
+  background-color: white;
+  padding: 20px;
 }
 
 .title {
@@ -16,7 +18,9 @@
     font-size: 30px;
     font-weight: bold;
     margin: 40px 0 20px;
-    background-color: #eee;
+    // background-color: #eee;
+    background: linear-gradient(45deg, #bdb9ff, #67b8ff);
+    color: white;
     padding: 10px 20px;
     border-radius: 5px;
   }
