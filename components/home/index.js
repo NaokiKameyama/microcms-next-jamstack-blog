@@ -16,8 +16,8 @@ export default function Home({ blog }) {
       </Head>
 
         <div className={s['home']}>
-          <div className={s['aaa']}>
-            <div className={s['bbb']}>
+          <div className={s['left-container']}>
+            <div className={s['list-title']}>
               <DoneIcon />&nbsp;&nbsp;新着記事
             </div>
             <div className={s['blog-card-list-container']}>
@@ -35,9 +35,10 @@ export default function Home({ blog }) {
             <div className={s['sub-container-profile']}>
                 <img
                     className={s['sub-container-profile-above']}
-                    src="/images/tokyo2.jpg"
+                    src="/images/beautiful.jpg"
                     alt="My avatar"
-                  />
+                />
+                {/* <div className={s['sub-container-profile-above']} /> */}
                 <div className={s['circle-box']}>
                   <img
                     className={s['circle']}
@@ -54,7 +55,7 @@ export default function Home({ blog }) {
               工学修士→某通信企業→Fintech企業。<br/>
               職種は、ProductOps Engineer。<br/>
               趣味はFlutterのアプリ開発やお金の勉強にハマっていまして、最近
-              <a href="https://apps.apple.com/jp/app/%E8%8B%B1%E5%8D%98%E8%AA%9E%E9%80%9A%E7%9F%A5/id1582213197">「英単語通知」</a>というアプリをリリースしました。<br />
+              <a target="_blank" href="https://apps.apple.com/jp/app/%E8%8B%B1%E5%8D%98%E8%AA%9E%E9%80%9A%E7%9F%A5/id1582213197">「英単語通知」</a>というアプリをリリースしました。<br />
               働き方、技術、金融のジャンルに興味があるので、それらに関することを書いていこうと思います。
               </div>
               <div className={s['icon-container']}>

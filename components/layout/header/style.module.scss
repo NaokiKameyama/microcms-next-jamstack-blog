@@ -1,16 +1,26 @@
 .header {
-  background: white;
+  // background: #58a9ef;
+  background: linear-gradient(45deg, #bdb9ff, #67b8ff);
+  background: linear-gradient(
+95deg, #75d5ff, #e68eff);
+  color:#fff;
   display: flex;
   align-items: center;
   box-shadow: 0 3px 6px rgb(0 0 0 / 18%);
   .inner {
+    padding: 0 50px;
     width: 1300px;
     height: 80px;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    h1{
-      padding: 0 30px;
+    .header-top{
+      cursor: pointer;
+      &:hover{
+        // color: #888888;
+        opacity: 0.5;
+        transition: 0.2s;
+      }
     }
     nav {
       margin: 0 0 0 auto;
@@ -23,13 +33,15 @@
     li {
         margin: 40px 0 0 15px;
         font-size: 20px;
+        &:hover{
+          // color: #888888;
+          opacity: 0.5;
+          transition: 0.2s;
+        }
     }
   }
 }
 
-
-
-
 .toolbarMargin {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }

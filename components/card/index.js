@@ -16,7 +16,7 @@ const Card = ({blog}) => {
           <UpdateIcon className={s['update-icon']}/> {blog.publishedAt}
         </div>
         <h1 className={s['card-title']}>{blog.title}</h1>
-        <p className={s['card-text']}>{blog.body.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'')}</p>
+        {/* <p className={s['card-text']}>{blog.body.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'')}</p> */}
       </div>
   </section>
   </Link>

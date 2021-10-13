@@ -1,12 +1,17 @@
 import { AppBar, Toolbar } from "@material-ui/core";
 import s from './style.module.scss';
+import Link from 'next/link';
 
 const Header = () => {
   return (
     <>
       <header className={s['header']}>
         <div className={s["inner"]}>
-          <h1>あつかんブログ 🐶</h1>
+          <div className={s["header-top"]}>
+            <Link href="/">
+              <h1>あつかんブログ🦄</h1>
+            </Link>
+          </div>
           <nav>
             <ul>
                 <li><a href="#">IT</a></li>

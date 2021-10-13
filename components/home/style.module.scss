@@ -2,41 +2,64 @@
   width: 100%;
   display: inline-flex;
   padding: auto;
-  .aaa{
-    width: 65%;
+  .left-container{
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
-    .bbb{
-      display: flex;
+    .list-title{
+      // display: flex;
+      // align-items: center;
+      // margin-right: 5%;
+      // margin-bottom: 20px;
+      // &:before,
+      // &:after {
+      //   content: '';
+      //   flex-grow: 1;
+      //   height: 2px;
+      //   background: rgb(0, 0, 0);
+      // }
+      // &:before {
+      //   margin-right: 30px;
+      // }
+      // &:after {
+      //   margin-left: 30px;
+      // }
+      width: 95.2%;
+      height: 35px;
+      line-height: 35px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 1px #b2b2b28f;
+      color: white;
+      background: linear-gradient(45deg, #bdb9ff, #67b8ff);
+      // background: #58a9ef;
+      display: inline-flex;
       align-items: center;
-      width: 85%;
-      margin-left: auto;
-      margin-right: auto;
-      &:before,
-      &:after {
-        content: '';
-        flex-grow: 1;/* 余白を分け与える */
-        height: 2px;
-        background: rgb(0, 0, 0);
-      }
-      &:before {
-        margin-right: 30px;
-      }
-      &:after {
-        margin-left: 30px;
-      }
+      text-align: center;
+      justify-content: center;
     }
     .blog-card-list-container {
+      // display: flex;
+      // justify-content: center;
+      // flex-wrap: wrap;
       display: flex;
-      justify-content: center;
+      // justify-content: space-between;
       flex-wrap: wrap;
+      .child{
+        width: 50%;
+      }
     }
   }
   .sub-container{
-    width: 350px;
+    margin-left: 30px;
+    height: 600px;
+    width: 30%;
+    background-color: white;
     .sub-container-profile{
       .sub-container-profile-above{
         width: 100%;
+        // height: 190px;
+        // background: linear-gradient(45deg, #bdb9ff, #67b8ff);
       }      
       .circle-box{
         height: 30px;
