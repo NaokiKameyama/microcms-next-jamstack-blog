@@ -4,8 +4,6 @@ import Link from "next/link";
 import UpdateIcon from '@material-ui/icons/Update';
 
 const Card = ({blog}) => {
-  console.log("card")
-  console.log(blog)
   return (
   <>
     <Link href={`/blog/${blog.id}`}>

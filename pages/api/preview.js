@@ -2,9 +2,6 @@
 import fetch from 'node-fetch'
 
 export default async (req, res) => {
-  console.log(req.query.slug)
-  console.log(req.query.draftKey)
-  console.log(process.env.API_KEY)
   if (!req.query.slug) {
     return res.status(404).end();
   }
@@ -14,7 +11,6 @@ export default async (req, res) => {
     { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
   )
   .then(res => res.json()).catch(error => null);
-  console.log(content)
 
   if (!content) {
     return res.status(401).json({ message: 'Invalid slug' });
