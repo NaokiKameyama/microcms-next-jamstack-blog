@@ -34,7 +34,8 @@ export default function Home({ blog }) {
       <div className={s['home']}>
         <div className={s['left-container']}>
           <div className={s['list-title']}>
-            <DoneIcon />&nbsp;&nbsp;新着記事
+            {/* <DoneIcon />&nbsp;&nbsp;新着記事 */}
+            ✓&nbsp;&nbsp;新着記事
           </div>
           <div className={s['blog-card-list-container']}>
             {blog.map((blog) => (
