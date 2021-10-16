@@ -32,7 +32,7 @@ export default function Profile({}) {
                 <td>あつかん</td>
               </tr>
               <tr>
-                <th>誕生年</th>
+                <th>生年</th>
                 <td>1993年</td>
               </tr>
               <tr>
@@ -60,8 +60,7 @@ export default function Profile({}) {
               <tr>
                 <th>趣味</th>
                 <td>
-                  プログラミング<br />
-                  資産運用<br />
+                  プログラミング, 資産運用
                 </td>
               </tr>
               <tr>
@@ -75,6 +74,7 @@ export default function Profile({}) {
                       英単語通知
                     </a> 　英単語を定期的にスマホにPush通知するアプリです。<br />
                     <br/>
+                    <hr/>
                     【Web】<br/>
                     <a
                     target="_blank"
@@ -94,15 +94,25 @@ export default function Profile({}) {
                 <th>資格</th>
                 <td>
                   Googleデジタルワークショップ 2017年取得<br/>
+                  <hr/>
                   Python エンジニア認定資格　2018年取得<br/>
+                  <hr/>
                   ITパスポート　2018年取得<br/>
+                  <hr/>
                   基本情報技術者 2018年取得<br/>
+                  <hr/>
                   応用情報技術者 2019年取得<br/>
+                  <hr/>
                   JDLA G検定(JDLA deep learning for GENERAL)　2019年取得<br/>
+                  <hr/>
                   JDLA E資格 (JDLA Deep Learning for ENGINEER)　2020年取得<br/>
+                  <hr/>
                   Web検定　2020年取得<br/>
+                  <hr/>
                   アジャイルソフトウェア開発技術者検定　2020年取得<br/>
+                  <hr/>
                   AZ-900: Microsoft Azure Fundamentals　2021年取得<br/>
+                  <hr/>
                   AWS Certified Cloud Practitioner　2021年取得<br/>
                 </td>
               </tr>

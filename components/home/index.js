@@ -8,8 +8,17 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import DoneIcon from '@material-ui/icons/Done';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import HomeSub from '../../components/home-sub'
+import { useState } from 'react';
 
-export default function Home({ blog }) {
+
+export default function Home({ blog, categoryData }) {
+  console.log(categoryData);
+  const [category, setCategory] = useState("新着記事");
+  const onChange = (value) => {
+    setCategory(value);
+  };
+
+
   return (
     <div>
       <Head>
@@ -35,16 +44,38 @@ export default function Home({ blog }) {
       </div>
       <div className={s['home']}>
         <div className={s['left-container']}>
-          <div className={s['list-title']}>
-            {/* <DoneIcon />&nbsp;&nbsp;新着記事 */}
-            ✓&nbsp;&nbsp;新着記事
-          </div>
+          <ul className={s['list-category']}>
+            <li onClick={()=>onChange("新着記事")} className={category=="新着記事" ? s['category'] : s['category2']}>
+              新着記事
+            </li>
+            {
+              categoryData.map((item) => (
+                <li key={item.id} onClick={()=>onChange(item.name)} className={category==item.name ? s['category'] : s['category2']}>
+                  {item.name}
+                </li>
+              ))
+            }
+          </ul>
           <div className={s['blog-card-list-container']}>
-            {blog.map((blog) => (
-            <div className={s['child']} key={blog.id}>
-                  <Card blog={blog} key={blog.id}/>
-            </div>
-                  ))}
+            {
+              (category == "新着記事")?
+                blog.map((blog) => (
+                  <div className={s['child']} key={blog.id}>
+                        <Card blog={blog} key={blog.id}/>
+                  </div>
+                )
+              ):
+              blog.map((blog) => {
+                if(blog.category.name != category){
+                  return
+                }
+                return(
+                  <div className={s['child']} key={blog.id}>
+                        <Card blog={blog} key={blog.id}/>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
         <HomeSub />
