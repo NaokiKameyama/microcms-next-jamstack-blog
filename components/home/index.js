@@ -16,11 +16,14 @@ export default function Home({ blog }) {
         <title>あつかんブログ</title>
       </Head>
       <div className={s['top-container']}>
-        <img
-            className={s['top-left-container']}
+        <div className={s['top-left-container']}>
+          <Image
             src="/images/undraw_Developer_activity_re_39tg.svg"
-            alt="My avatar"
-        />
+            alt="Picture of the author"
+            width={250}
+            height={250}
+          />
+        </div>
         <div className={s['top-right-container']}>
           <h2>
             TECH, FINANCE, WORK...

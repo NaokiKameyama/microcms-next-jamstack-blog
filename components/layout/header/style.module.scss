@@ -1,9 +1,8 @@
 .header {
   // background: #58a9ef;
   background: linear-gradient(45deg, #bdb9ff, #67b8ff);
-  background: linear-gradient(
-95deg, #75d5ff, #e68eff);
-  color:#fff;
+  background: linear-gradient(95deg, #75d5ff, #e68eff);
+  color: #fff;
   display: flex;
   align-items: center;
   box-shadow: 0 3px 6px rgb(0 0 0 / 18%);
@@ -14,9 +13,9 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    .header-top{
+    .header-top {
       cursor: pointer;
-      &:hover{
+      &:hover {
         // color: #888888;
         opacity: 0.5;
         transition: 0.2s;
@@ -26,18 +25,19 @@
       margin: 0 0 0 auto;
     }
     ul {
-        list-style: none;
-        margin: 0;
-        display: flex;
+      list-style: none;
+      margin: 0;
+      display: flex;
     }
     li {
-        margin: 40px 0 0 15px;
-        font-size: 20px;
-        &:hover{
-          // color: #888888;
-          opacity: 0.5;
-          transition: 0.2s;
-        }
+      margin: 40px 0 0 30px;
+      font-size: 18px;
+      cursor: pointer;
+      &:hover {
+        // color: #888888;
+        opacity: 0.5;
+        transition: 0.2s;
+      }
     }
   }
 }

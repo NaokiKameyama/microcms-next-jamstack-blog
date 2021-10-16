@@ -13,18 +13,34 @@ export default function HomeSub() {
   return (
       <div className={s['sub-container']}>
         <div className={s['sub-container-profile']}>
-            <img
+            {/* <img
                 className={s['sub-container-profile-above']}
                 src="/images/beautiful.jpg"
                 alt="My avatar"
-            />
-            {/* <div className={s['sub-container-profile-above']} /> */}
+            /> */}
+            <div className={s['sub-container-profile-above']}>
+              <Image
+                src="/images/beautiful.jpg"
+                alt="My avatar"
+                width={500}
+                height={290}
+              />
+            </div>
             <div className={s['circle-box']}>
-              <img
+              {/* <img
                 className={s['circle']}
                 src="/images/IMG_8467.jpg"
                 alt="My avatar"
-              />
+              /> */}
+              <div className={s['circle2']}>
+                <Image
+                  className={s['circle']}
+                  src="/images/IMG_8467.jpg"
+                  alt="My avatar"
+                  width={100}
+                  height={100}
+                />
+              </div>
             </div>
         </div>
         <div className={s['sub-container-profile-botom']}>
@@ -34,7 +50,7 @@ export default function HomeSub() {
           <div className={s['profile-description']}>
           工学修士→某通信企業→Fintech企業。<br/>
           職種は、ProductOps Engineer。<br/>
-          趣味はFlutterのアプリ開発やお金の勉強にハマっていまして、最近
+          趣味はFlutterのアプリ開発やお金の勉強にハマっています。最近
           <a target="_blank" rel="noreferrer" href="https://apps.apple.com/jp/app/%E8%8B%B1%E5%8D%98%E8%AA%9E%E9%80%9A%E7%9F%A5/id1582213197">「英単語通知」</a>というアプリをリリースしました。<br />
           働き方、技術、金融のジャンルに興味があるので、それらに関することを書いていこうと思います。
           </div>

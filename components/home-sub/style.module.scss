@@ -10,17 +10,17 @@
       // background: linear-gradient(45deg, #bdb9ff, #67b8ff);
     }
     .circle-box {
-      height: 30px;
+      height: 90px;
       background-color: white;
       width: 100%;
       text-align: center;
-      .circle {
-        vertical-align: middle;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border: solid 3px #fff;
+      .circle2 {
         margin-top: -50px;
+        .circle {
+          vertical-align: middle;
+          border-radius: 50%;
+          border: solid 3px #fff;
+        }
       }
     }
   }
@@ -37,7 +37,7 @@
     }
     .profile-description {
       a {
-        color: #1da1f2;
+        // color: #1da1f2;
         font-weight: bold;
       }
     }
