@@ -19,7 +19,7 @@
 //   ),
 // ) !default;
 
-$xxs: 450px; // スマホ横のブレイクポイント
+$xxs: 550px; // スマホ横のブレイクポイント
 @mixin xxs {
   @media (max-width: ($xxs)) {
     @content;

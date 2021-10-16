@@ -12,8 +12,8 @@ export default function HomeSub() {
           <Image
             src="/images/beautiful.jpg"
             alt="My avatar"
-            width={500}
-            height={290}
+            width={750}
+            height={400}
           />
         </div>
         <div className={s['circle-box']}>
@@ -22,8 +22,8 @@ export default function HomeSub() {
               className={s['circle']}
               src="/images/IMG_8467.jpg"
               alt="My avatar"
-              width={100}
-              height={100}
+              width={120}
+              height={120}
             />
           </div>
         </div>

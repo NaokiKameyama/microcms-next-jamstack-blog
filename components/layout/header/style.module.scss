@@ -14,7 +14,7 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    @include xs {
+    @include s {
       display: block;
       padding: 0 20px;
     }
@@ -27,7 +27,7 @@
         opacity: 0.5;
         transition: 0.2s;
       }
-      @include xs {
+      @include s {
         text-align: center;
       }
     }
@@ -38,7 +38,7 @@
       list-style: none;
       // margin: 0;
       display: flex;
-      @include xs {
+      @include s {
         padding: 0;
         // display: block;
         display: flex;
@@ -54,7 +54,7 @@
         opacity: 0.5;
         transition: 0.2s;
       }
-      @include xs {
+      @include s {
         margin: auto 20px;
       }
       @include xxs {
