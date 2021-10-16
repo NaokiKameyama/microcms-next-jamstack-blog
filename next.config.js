@@ -3,4 +3,7 @@ module.exports = {
   images: {
     domains: ['images.microcms-assets.io'],
   },
+  future: {
+    webpack5: true,
+  },
 }
