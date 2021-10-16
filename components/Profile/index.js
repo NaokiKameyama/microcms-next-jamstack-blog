@@ -4,9 +4,6 @@ import Head from 'next/head'
 import Card from '../card'
 import s from './style.module.scss';
 import Image from 'next/image'
-import TwitterIcon from '@material-ui/icons/Twitter';
-import DoneIcon from '@material-ui/icons/Done';
-import GitHubIcon from '@material-ui/icons/GitHub';
 import HomeSub from '../home-sub'
 import styles from '../../styles/Home.module.scss';
 
