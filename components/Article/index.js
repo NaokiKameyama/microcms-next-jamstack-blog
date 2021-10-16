@@ -22,10 +22,10 @@ export default function Article({ blog ,highlightedBody }) {
             <DoneIcon />&nbsp;&nbsp;新着記事
           </div> */}
           <main className={styles.main}>
+          <Image src={blog.image.url} width={blog.image.width} height={blog.image.height} alt="My avatar" />
+            <p className={s['category']}>{blog.category && `${blog.category.name}`}</p>
             <h1 className={styles.title}>{blog.title}</h1>
             <p className={styles.publishedAt}>{blog.publishedAt}</p>
-            <p className="category">{blog.category && `${blog.category.name}`}</p>
-            <Image src={blog.image.url} width={blog.image.width} height={blog.image.height} alt="My avatar" />
             <div
               dangerouslySetInnerHTML={{
                 __html: `${highlightedBody}`,

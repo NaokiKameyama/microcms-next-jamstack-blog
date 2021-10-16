@@ -16,6 +16,7 @@ const Card = ({blog}) => {
         <h1 className={s['card-title']}>{blog.title}</h1>
         {/* <p className={s['card-text']}>{blog.body.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'')}</p> */}
       </div>
+      <p className={s['category']}>{blog.category && `${blog.category.name}`}</p>
   </section>
   </Link>
   </>

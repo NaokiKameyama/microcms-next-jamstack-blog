@@ -30,6 +30,15 @@
       text-align: center;
       justify-content: center;
     }
+    .category {
+      width: 70px;
+      text-align: center;
+      border-radius: 5px;
+      color: white;
+      font-size: 14px;
+      background: linear-gradient(45deg, #bdb9ff, #67b8ff);
+      box-shadow: 0px 0px 10px 1px #b2b2b28f;
+    }
   }
   .sub-container {
     margin-left: 30px;

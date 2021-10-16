@@ -3,6 +3,7 @@
   margin: 0 auto;
   background-color: white;
   padding: 20px;
+  margin-bottom: 30px;
 }
 
 .title {
@@ -35,6 +36,9 @@
   & > p {
     line-height: 1.8;
     letter-spacing: 0.2px;
+    & > a {
+      word-wrap: break-word;
+    }
   }
 
   & > ol {

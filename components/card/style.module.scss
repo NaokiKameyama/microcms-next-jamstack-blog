@@ -1,5 +1,6 @@
 @import "../../styles/index";
 .card {
+  position: relative;
   margin-right: 33px;
   margin-bottom: 33px;
   width: 100%;
@@ -60,5 +61,18 @@
     //   -webkit-line-clamp: 3;
     //   overflow: hidden;
     // }
+  }
+  .category {
+    position: absolute;
+    top: -2px;
+    left: 10px;
+    width: 70px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background: linear-gradient(45deg, #bdb9ff, #67b8ff);
+    // background-color: #67b8ff;
+    box-shadow: 0px 0px 10px 1px #b2b2b28f;
   }
 }
