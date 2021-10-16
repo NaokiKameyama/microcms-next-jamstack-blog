@@ -29,8 +29,7 @@ export default function Home({ blog }) {
             TECH, FINANCE, WORK...
           </h2>
           <p>
-          技術, 金融, 働き方に関する記事を投稿しています。<br />
-          有益な情報を皆さんとシェアしていきたいです。
+          技術, 金融, 働き方に関する記事を投稿しています。
           </p>
         </div>
       </div>

@@ -1,12 +1,16 @@
 @import "../../styles/index";
 .top-container {
   width: 100%;
-  height: 250px;
+  // height: 250px;
   color: white;
   // background-color: #93d1f0;
   background: linear-gradient(45deg, #bdb9ff, #67b8ff);
   margin-bottom: 45px;
   display: inline-flex;
+  @include s {
+    color: rgb(47, 0, 255);
+  }
+
   .top-left-container {
     width: 50%;
     // padding: 18px;
@@ -17,9 +21,6 @@
     margin: auto 5% auto auto;
     width: 50%;
     font-size: 22px;
-  }
-  @include s {
-    color: red;
   }
 }
 .home {

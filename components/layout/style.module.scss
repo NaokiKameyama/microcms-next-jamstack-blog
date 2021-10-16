@@ -1,6 +1,10 @@
 @import "../../styles/index";
 .base {
+  overflow: hidden;
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 50px;
+  @include xs {
+    padding: 0 20px;
+  }
 }
