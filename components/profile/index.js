@@ -37,11 +37,11 @@ export default function Profile({}) {
               </tr>
               <tr>
                 <th>組織</th>
-                <td>Fintech企業</td>
+                <td>Fintech企業 📱</td>
               </tr>
               <tr>
                 <th>役職</th>
-                <td>Product Manager</td>
+                <td>ProductOps Engineer ⚙️, Product Manager 🧑‍💻</td>
               </tr>
               <tr>
                 <th>職歴</th>
