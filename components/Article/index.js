@@ -9,6 +9,7 @@ import DoneIcon from '@material-ui/icons/Done';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import HomeSub from '../home-sub'
 import styles from '../../styles/Home.module.scss';
+import { TwitterFollowButton } from 'react-twitter-embed'
 
 export default function Article({ blog ,highlightedBody }) {
   return (
@@ -36,27 +37,13 @@ export default function Article({ blog ,highlightedBody }) {
             />
 
             <br />
-            <a
-            href="https://twitter.com/atukan0930?ref_src=twsrc%5Etfw"
-            className={"twitter-follow-button"}
-            data-size="large"
-            data-lang="ja"
-            data-show-count="false">
-              Follow @atukan0930
-            </a>
+            <div className={['centerContent']}>
+              <div className={['selfCenter']}>
+                <TwitterFollowButton screenName="atukan0930" options={{size: 'large'}} />
+              </div>
+            </div>
+            <br />
           </main>
-          {/* <div className={s['follow']}>
-            <a
-            href="https://twitter.com/atukan0930?ref_src=twsrc%5Etfw"
-            className={"twitter-follow-button"}
-            data-size="large"
-            data-lang="ja"
-            data-show-count="false">
-              Follow @atukan0930
-            </a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
-            </script>
-          </div> */}
         </div>
         <HomeSub />
       </div>
