@@ -37,6 +37,7 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <body className="custom_class">
           <Main />
           <NextScript />

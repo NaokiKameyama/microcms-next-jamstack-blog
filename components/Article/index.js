@@ -34,7 +34,29 @@ export default function Article({ blog ,highlightedBody }) {
               }}
               className={styles.post}
             />
+
+            <br />
+            <a
+            href="https://twitter.com/atukan0930?ref_src=twsrc%5Etfw"
+            className={"twitter-follow-button"}
+            data-size="large"
+            data-lang="ja"
+            data-show-count="false">
+              Follow @atukan0930
+            </a>
           </main>
+          {/* <div className={s['follow']}>
+            <a
+            href="https://twitter.com/atukan0930?ref_src=twsrc%5Etfw"
+            className={"twitter-follow-button"}
+            data-size="large"
+            data-lang="ja"
+            data-show-count="false">
+              Follow @atukan0930
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+            </script>
+          </div> */}
         </div>
         <HomeSub />
       </div>
