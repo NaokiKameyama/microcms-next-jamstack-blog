@@ -5,11 +5,15 @@ import cheerio from 'cheerio';
 import hljs from 'highlight.js'
 import 'highlight.js/styles/vs2015.css';
 import Article from "../../components/Article"
+import CommonMeta from '../../components/CommonMeta'
+
 
 export default function BlogId({blog ,highlightedBody}) {
   return (
-    <Article blog={blog} highlightedBody={highlightedBody} />
-    // <Blog blog={blog} highlightedBody={highlightedBody} />
+    <>
+      <CommonMeta />
+      <Article blog={blog} highlightedBody={highlightedBody} />
+    </>
   );
 }
 
