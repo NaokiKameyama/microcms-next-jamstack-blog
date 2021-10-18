@@ -11,7 +11,7 @@ import CommonMeta from "../../components/commonMeta"
 export default function BlogId({blog ,highlightedBody}) {
   return (
     <>
-      <CommonMeta />
+      <CommonMeta blog={blog} />
       <Article blog={blog} highlightedBody={highlightedBody} />
     </>
   );
