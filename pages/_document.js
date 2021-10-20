@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { GA_ID } from '../libs/gtag'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -10,6 +11,10 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+        <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

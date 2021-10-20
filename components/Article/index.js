@@ -14,9 +14,6 @@ import { TwitterFollowButton } from 'react-twitter-embed'
 export default function Article({ blog ,highlightedBody }) {
   return (
     <div>
-      <Head>
-        <title>あつかんブログ</title>
-      </Head>
       <div className={s['home']}>
         <div className={s['left-container']}>
           {/* <div className={s['list-title']}>

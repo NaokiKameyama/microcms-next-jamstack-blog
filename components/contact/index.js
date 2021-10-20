@@ -14,7 +14,7 @@ export default function Contact({}) {
   return (
     <div>
       <Head>
-        <title>あつかんブログ</title>
+        <title>お問い合わせ</title>
       </Head>
       <div className={s['home']}>
         <div className={s['left-container']}>

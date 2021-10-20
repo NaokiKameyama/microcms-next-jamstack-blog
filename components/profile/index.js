@@ -11,7 +11,7 @@ export default function Profile({}) {
   return (
     <div>
       <Head>
-        <title>あつかんブログ</title>
+        <title>プロフィール</title>
       </Head>
       <div className={s['home']}>
         <div className={s['left-container']}>
