@@ -12,7 +12,6 @@ import { useState } from 'react';
 
 
 export default function Home({ blog, categoryData }) {
-  console.log(categoryData);
   const [category, setCategory] = useState("新着記事");
   const onChange = (value) => {
     setCategory(value);

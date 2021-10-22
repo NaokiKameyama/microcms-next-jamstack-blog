@@ -17,9 +17,9 @@ export default function BlogId({ blog, highlightedBody}) {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  const data: {contents: []} = await client.get({ endpoint: "blog" });
 
-  const paths = data.contents.map((content) => `/preview/${content.id}`);
+  const paths = data.contents.map((content: {id: string}) => `/preview/${content.id}`);
   return { paths, fallback: false };
 };
 
@@ -32,7 +32,7 @@ export const getStaticProps = async (context) => {
     ? { draftKey: context.previewData.draftKey }
     : {};
 
-  const data = await client.get({
+  const data: {body: string} = await client.get({
     endpoint: "blog",
     contentId: id,
     queries: draftKey,
