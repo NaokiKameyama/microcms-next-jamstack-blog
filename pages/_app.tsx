@@ -6,7 +6,9 @@ import usePageView from '../hooks/usePageView'
 import { useRouter } from "next/router";
 import React, { useEffect } from 'react'
 
-function MyApp({ Component, pageProps }) {
+import { AppProps} from 'next/app'
+
+function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
   usePageView()
   return (

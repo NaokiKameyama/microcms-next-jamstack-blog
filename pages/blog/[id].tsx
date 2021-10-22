@@ -7,7 +7,6 @@ import 'highlight.js/styles/vs2015.css';
 import Article from "../../components/Article"
 import CommonMeta from "../../components/commonMeta"
 
-
 export default function BlogId({blog ,highlightedBody}) {
   return (
     <>
@@ -19,17 +18,16 @@ export default function BlogId({blog ,highlightedBody}) {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "blog" });
-
-  const paths = data.contents.map((content) => `/blog/${content.id}`);
+  const data: {contents:[]} = await client.get({ endpoint: "blog" });
+  const paths = data.contents.map((content: {id: string}) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "blog", contentId: id });
-
+  const data: {body: string} = await client.get({ endpoint: "blog", contentId: id });
+  
   const $ = cheerio.load(data.body);    // data.bodyはmicroCMSから返されるリッチエディタ部分
   $('pre code').each((_, elm) => {
     const result = hljs.highlightAuto($(elm).text());
