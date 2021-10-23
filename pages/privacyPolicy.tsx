@@ -59,28 +59,22 @@ const privacyPolicy: React.FC = () => {
       当サイトはGoogle及びGoogleのパートナー（第三者配信事業者）の提供する広告を設置しております。その広告配信にはCookieを使用し、当サイトやその他のサイトへの過去のアクセス情報に基づいて広告を配信します。
       Googleが広告Cookieを使用することにより、当サイトや他のサイトにアクセスした際の情報に基づいて、Google
       やそのパートナーが適切な広告を表示しています。 お客様はGoogleアカウントの
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href="https://adssettings.google.com/u/0/authenticated"
-      >
-        広告設定ページ
-      </a>
+      <Link passHref href="https://adssettings.google.com/u/0/authenticated">
+        <a target="_blank">広告設定ページ</a>
+      </Link>
       で、パーソナライズ広告を無効にできます。
       またaboutads.infoのページにアクセスして頂き、パーソナライズ広告掲載に使用される第三者配信事業者のCookieを無効にできます。
       その他、Googleの広告におけるCookieの取り扱い詳細については、Googleの
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href="https://policies.google.com/technologies/ads"
-      >
-        ポリシーと規約ページ
-      </a>
+      <Link passHref href="https://policies.google.com/technologies/ads">
+        <a target="_blank">ポリシーと規約ページ</a>
+      </Link>
       をご覧ください。
       <h3>第11条（お問い合わせ窓口）</h3>
       本ポリシーに関するお問い合わせは，下記の窓口までお願いいたします。
       <br />
-      <a href="/contact">お問い合わせ</a>
+      <Link href="/contact">
+        <a>お問い合わせ</a>
+      </Link>
       <br />
       <br />
       以上
