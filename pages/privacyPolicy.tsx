@@ -61,6 +61,7 @@ const privacyPolicy: React.FC = () => {
       やそのパートナーが適切な広告を表示しています。 お客様はGoogleアカウントの
       <a
         target="_blank"
+        rel="noreferrer"
         href="https://adssettings.google.com/u/0/authenticated"
       >
         広告設定ページ
@@ -68,7 +69,11 @@ const privacyPolicy: React.FC = () => {
       で、パーソナライズ広告を無効にできます。
       またaboutads.infoのページにアクセスして頂き、パーソナライズ広告掲載に使用される第三者配信事業者のCookieを無効にできます。
       その他、Googleの広告におけるCookieの取り扱い詳細については、Googleの
-      <a target="_blank" href="https://policies.google.com/technologies/ads">
+      <a
+        target="_blank"
+        rel="noreferrer"
+        href="https://policies.google.com/technologies/ads"
+      >
         ポリシーと規約ページ
       </a>
       をご覧ください。
