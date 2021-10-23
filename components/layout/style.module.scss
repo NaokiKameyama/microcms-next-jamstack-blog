@@ -1,10 +1,15 @@
 @import "../../styles/index";
-.base {
-  overflow: hidden;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 50px;
-  @include s {
-    padding: 0 10px;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .base {
+    overflow: hidden;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+    @include s {
+      padding: 0 10px;
+    }
   }
 }

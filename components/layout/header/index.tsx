@@ -1,8 +1,7 @@
-import { AppBar, Toolbar } from "@material-ui/core";
 import s from "./style.module.scss";
 import Link from "next/link";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <>
       <header className={s["header"]}>
