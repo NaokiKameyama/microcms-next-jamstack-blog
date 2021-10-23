@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const privacyPolicy: React.FC = () => {
   return (
@@ -54,11 +55,32 @@ const privacyPolicy: React.FC = () => {
       <h3>第9条（プライバシーポリシーの変更）</h3>
       本ポリシーの内容は，法令その他本ポリシーに別段の定めのある事項を除いて，ユーザーに通知することなく，変更することができるものとします。
       当社が別途定める場合を除いて，変更後のプライバシーポリシーは，本ウェブサイトに掲載したときから効力を生じるものとします。
-      <h3>第10条（お問い合わせ窓口）</h3>
+      <h3>第10条 広告の配信について</h3>
+      当サイトはGoogle及びGoogleのパートナー（第三者配信事業者）の提供する広告を設置しております。その広告配信にはCookieを使用し、当サイトやその他のサイトへの過去のアクセス情報に基づいて広告を配信します。
+      Googleが広告Cookieを使用することにより、当サイトや他のサイトにアクセスした際の情報に基づいて、Google
+      やそのパートナーが適切な広告を表示しています。 お客様はGoogleアカウントの
+      <a
+        target="_blank"
+        href="https://adssettings.google.com/u/0/authenticated"
+      >
+        広告設定ページ
+      </a>
+      で、パーソナライズ広告を無効にできます。
+      またaboutads.infoのページにアクセスして頂き、パーソナライズ広告掲載に使用される第三者配信事業者のCookieを無効にできます。
+      その他、Googleの広告におけるCookieの取り扱い詳細については、Googleの
+      <a target="_blank" href="https://policies.google.com/technologies/ads">
+        ポリシーと規約ページ
+      </a>
+      をご覧ください。
+      <h3>第11条（お問い合わせ窓口）</h3>
       本ポリシーに関するお問い合わせは，下記の窓口までお願いいたします。
       <br />
-      Eメールアドレス： atukan0930@gmail.com <br />
+      <a href="/contact">お問い合わせ</a>
+      <br />
+      <br />
       以上
+      <br />
+      <br />
     </>
   );
 };
