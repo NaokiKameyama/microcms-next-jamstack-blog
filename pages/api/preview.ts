@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
-import fetch from 'node-fetch'
-import type { NextApiRequest, NextApiResponse } from 'next'
+import fetch from "node-fetch";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.query.slug) {
@@ -9,12 +9,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const content = await fetch(
     // `https://atukan0930.microcms.io/api/v1/blog/${req.query.slug}?fields=id&draftKey=${req.query.draftKey}`,
     `https://atukan0930.microcms.io/api/v1/blog/${req.query.slug}?draftKey=${req.query.draftKey}`,
-    { headers: { 'X-API-KEY': process.env.API_KEY || '' } }
+    { headers: { "X-API-KEY": process.env.API_KEY || "" } }
   )
-  .then(res => res.json()).catch(error => null);
+    .then((res) => res.json())
+    .catch((error) => null);
 
   if (!content) {
-    return res.status(401).json({ message: 'Invalid slug' });
+    return res.status(401).json({ message: "Invalid slug" });
   }
 
   res.setPreviewData({
@@ -22,5 +23,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     draftKey: req.query.draftKey,
   });
   res.writeHead(307, { Location: `/preview/${content.id}` });
-  res.end('Preview mode enabled');
+  res.end("Preview mode enabled");
 };

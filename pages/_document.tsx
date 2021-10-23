@@ -1,10 +1,16 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
-import { GA_ID } from '../libs/gtag'
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from "next/document";
+import { GA_ID } from "../libs/gtag";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
@@ -12,7 +18,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           {/* Google Tag Manager*/}
-        <script
+          <script
             dangerouslySetInnerHTML={{
               __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -22,8 +28,8 @@ export default class MyDocument extends Document {
               })(window,document,'script','dataLayer','GTM-M63CZG3');
           `,
             }}
-        />
-        {/* <script
+          />
+          {/* <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           /> */}
@@ -55,7 +61,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
         </Head>
         <body className="custom_class">
-        <noscript
+          <noscript
             dangerouslySetInnerHTML={{
               __html: `            
               <iframe 
@@ -70,6 +76,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }

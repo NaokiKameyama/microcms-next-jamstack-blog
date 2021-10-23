@@ -1,12 +1,12 @@
 import { AppBar, Toolbar } from "@material-ui/core";
-import Header from './header'
-import s from './style.module.scss';
+import Header from "./header";
+import s from "./style.module.scss";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className={s['base']}>{children}</main>
+      <main className={s["base"]}>{children}</main>
     </>
   );
 };

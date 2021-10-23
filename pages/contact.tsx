@@ -1,7 +1,5 @@
-import Contact from "../components/contact"
+import Contact from "../components/contact";
 
 export default function contact() {
-  return (
-    <Contact />
-  );
+  return <Contact />;
 }
