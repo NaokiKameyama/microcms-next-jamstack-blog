@@ -16,7 +16,12 @@ interface Blog {
   isPremium: boolean;
 }
 
-export default function Home2({ blog, categoryData }) {
+interface Props {
+  blog: Blog;
+  categoryData: Category;
+}
+
+export default function Home2({ blog, categoryData }: Props) {
   return <Home blog={blog} categoryData={categoryData} />;
 }
 

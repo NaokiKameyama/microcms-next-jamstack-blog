@@ -6,15 +6,30 @@ import hljs from "highlight.js";
 import "highlight.js/styles/vs2015.css";
 import Article from "../../components/Article";
 import CommonMeta from "../../components/commonMeta";
+import { GetStaticProps } from "next";
 
-export default function BlogId({ blog, highlightedBody }) {
+interface Blog {
+  image: {
+    url: string;
+  };
+  title: string;
+  body: string;
+  category: string;
+  isPremium: boolean;
+}
+interface Props {
+  blog: Blog;
+  highlightedBody: string;
+}
+
+const BlogId: React.FC<Props> = ({ blog, highlightedBody }) => {
   return (
     <>
       <CommonMeta blog={blog} />
       <Article blog={blog} highlightedBody={highlightedBody} />
     </>
   );
-}
+};
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
@@ -26,7 +41,7 @@ export const getStaticPaths = async () => {
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: { params: { id: string } }) => {
   const id = context.params.id;
   const data: { body: string } = await client.get({
     endpoint: "blog",
@@ -47,3 +62,5 @@ export const getStaticProps = async (context) => {
     },
   };
 };
+
+export default BlogId;

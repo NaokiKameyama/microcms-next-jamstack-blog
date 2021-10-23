@@ -6,7 +6,22 @@ import cheerio from "cheerio";
 import hljs from "highlight.js";
 import "highlight.js/styles/vs2015.css";
 
-export default function BlogId({ blog, highlightedBody }) {
+interface Blog {
+  image: {
+    url: string;
+  };
+  title: string;
+  body: string;
+  category: string;
+  isPremium: boolean;
+}
+
+interface Props {
+  blog: Blog;
+  highlightedBody: String;
+}
+
+export default function BlogId({ blog, highlightedBody }: Props) {
   return (
     <>
       <p>※Preview Mode</p>
@@ -26,7 +41,10 @@ export const getStaticPaths = async () => {
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: {
+  params: { id: string };
+  previewData: { draftKey: string | null };
+}) => {
   const id = context.params.id;
 
   // draftKeyを取得し、クエリを作成する
