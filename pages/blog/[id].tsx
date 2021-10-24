@@ -33,7 +33,13 @@ const BlogId: React.FC<Props> = ({ blog, highlightedBody }) => {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const data: { contents: [] } = await client.get({ endpoint: "blog" });
+  const data: { contents: [] } = await client.get({
+    endpoint: "blog",
+    queries: {
+      offset: 0,
+      limit: 20,
+    },
+  });
   const paths = data.contents.map(
     (content: { id: string }) => `/blog/${content.id}`
   );

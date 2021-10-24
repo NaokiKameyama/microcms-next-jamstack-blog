@@ -10,6 +10,8 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import HomeSub from "../../components/home-sub";
 import { useState } from "react";
 
+import {Pagination} from "../../components/pagination"
+
 export default function Home({ blog, categoryData }) {
   const [category, setCategory] = useState("新着記事");
   const onChange = (value) => {
@@ -82,6 +84,7 @@ export default function Home({ blog, categoryData }) {
         </div>
         <HomeSub />
       </div>
+      {/* <Pagination totalCount={blog.length} /> */}
     </div>
   );
 }
