@@ -12,6 +12,7 @@ import styles from "../../styles/Home.module.scss";
 import { TwitterFollowButton } from "react-twitter-embed";
 
 export default function Article({ blog, highlightedBody }) {
+  console.log(blog.html);
   return (
     <div>
       <div className={s["home"]}>
@@ -39,7 +40,14 @@ export default function Article({ blog, highlightedBody }) {
               }}
               className={styles.post}
             />
-
+            {blog.html && (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `${blog.html}`,
+                }}
+                className={styles.post}
+              />
+            )}
             <br />
             <div className={["centerContent"]}>
               <div className={["selfCenter"]}>
