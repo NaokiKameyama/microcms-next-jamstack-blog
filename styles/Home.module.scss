@@ -45,7 +45,12 @@
       word-wrap: break-word;
     }
     & > img {
-      width: 100%;
+      display: block;
+      margin: auto;
+      max-width: 70%;
+      @include s {
+        max-width: 90%;
+      }
     }
   }
 
