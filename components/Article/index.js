@@ -12,7 +12,6 @@ import styles from "../../styles/Home.module.scss";
 import { TwitterFollowButton } from "react-twitter-embed";
 
 export default function Article({ blog, highlightedBody }) {
-  console.log(blog.html);
   return (
     <div>
       <div className={s["home"]}>
