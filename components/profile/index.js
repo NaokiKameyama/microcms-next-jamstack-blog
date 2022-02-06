@@ -20,11 +20,11 @@ export default function Profile({}) {
             <div>
               こんにちは。
               <br />
-              このサイトを運営しているあつかんと申します。
-              <br />
-              サイトにお越し頂きありがとうございます。
+              お越し頂きありがとうございます。
               <br />
               主に「技術、金融、働き方」に関する情報発信をしています。
+              <br />
+              (本サイトは、Next.js, TypesScript, microCMS, Vercel等の技術を使って、0から構築しています。)
               <br />
             </div>
             <div>
