@@ -59,10 +59,12 @@
     list-style-position: inside;
   }
 
-  & > pre {
-    width: 85vw;
-    & > code {
-      width: 90vw;
+  @include s {
+    & > pre {
+      width: 85vw;
+      & > code {
+        width: 92vw;
+      }
     }
   }
 }
