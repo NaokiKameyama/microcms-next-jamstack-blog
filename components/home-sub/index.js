@@ -29,11 +29,11 @@ export default function HomeSub() {
       <div className={s["sub-container-profile-botom"]}>
         <div className={s["name"]}>あつかん</div>
         <div className={s["profile-description"]}>
-          工学修士→某通信企業→Fintech企業。
+          工学修士→某通信企業→FinTech企業。
           <br />
-          職種は、ProductOps Engineer。
+          本業でFinTech企業のプロダクトマネージャ、副業でEdTech企業のフルスタックエンジニアをやっています。
           <br />
-          趣味はFlutterのアプリ開発やお金の勉強にハマっています。最近
+          趣味はWebサービス開発やお金の勉強にハマっています。最近
           <a
             target="_blank"
             rel="noreferrer"

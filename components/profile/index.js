@@ -31,11 +31,11 @@ export default function Profile({}) {
               <table>
                 <tr>
                   <th>名前</th>
-                  <td>あつかん</td>
+                  <td>亀山 直起</td>
                 </tr>
                 <tr>
-                  <th>生年</th>
-                  <td>1993年</td>
+                  <th>生年月</th>
+                  <td>1993年9月</td>
                 </tr>
                 <tr>
                   <th>組織</th>
@@ -43,7 +43,7 @@ export default function Profile({}) {
                 </tr>
                 <tr>
                   <th>役職</th>
-                  <td>ProductOps Engineer ⚙️, Product Manager 🧑‍💻</td>
+                  <td>Product Manager🧑‍💻</td>
                 </tr>
                 <tr>
                   <th>職歴</th>
