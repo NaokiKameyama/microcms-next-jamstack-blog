@@ -98,12 +98,12 @@ export default function Profile({}) {
                       JS-Pro.(現在サービス停止中)
                     </a>{" "}
                     　JavaScript特化型のオンライン学習サービスです。
-                      このサービスは、TOKYO MXで地上放映されました。(<a
+                      このサービスは、TOKYO MXで地上放映されました(<a
                       target="_blank"
                       rel="noreferrer"
                       href="https://www.youtube.com/watch?v=Hi19AWSqn1M"
                     >動画
-                    </a>)
+                    </a>)。
                     <br />
                   </td>
                 </tr>
