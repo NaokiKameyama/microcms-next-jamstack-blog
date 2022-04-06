@@ -61,7 +61,8 @@ export default function Profile({}) {
                 </tr>
                 <tr>
                   <th>趣味</th>
-                  <td>プログラミング, 資産運用</td>
+                  <td>プログラミング, 資産運用, 犬
+                  </td>
                 </tr>
                 <tr>
                   <th>作成したサービス</th>
