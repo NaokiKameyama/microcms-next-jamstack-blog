@@ -95,7 +95,7 @@ export default function Profile({}) {
                       rel="noreferrer"
                       href="https://www.js-pro.jp/"
                     >
-                      JS-Pro.
+                      JS-Pro.(現在サービス停止中)
                     </a>{" "}
                     　JavaScript特化型のオンライン学習サービスです。
                       このサービスは、TOKYO MXで地上放映されました。(
