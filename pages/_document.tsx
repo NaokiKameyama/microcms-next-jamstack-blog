@@ -17,11 +17,8 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script
-            data-ad-client="ca-pub-6575946142497456"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          ></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6575946142497456"
+     crossorigin="anonymous"></script>
           {/* Google Tag Manager*/}
           <script
             dangerouslySetInnerHTML={{
