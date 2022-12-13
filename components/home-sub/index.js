@@ -27,10 +27,8 @@ export default function HomeSub() {
         </div>
       </div>
       <div className={s["sub-container-profile-botom"]}>
-        <div className={s["name"]}>あつかん</div>
+        <div className={s["name"]}>亀山 直起</div>
         <div className={s["profile-description"]}>
-          工学修士→某通信企業→FinTech企業。
-          <br />
           本業でFinTech企業のプロダクトマネージャ、副業でEdTech企業のフルスタックエンジニアをやっています。
           <br />
           趣味はWebサービス開発やお金の勉強にハマっています。最近
