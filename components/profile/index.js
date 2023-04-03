@@ -94,7 +94,7 @@ export default function Profile({}) {
                     <a
                       target="_blank"
                       rel="noreferrer"
-                      href="https://sveltestudy.jp/"
+                      href="https://svelte-study.vercel.app/"
                     >
                       SvelteStudy
                     </a>{" "}
