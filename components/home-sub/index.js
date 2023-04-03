@@ -41,16 +41,16 @@ export default function HomeSub() {
           </a>
           というアプリをリリースしました。
           <br />
-          働き方、技術、金融のジャンルに興味があるので、それらに関することを書いていこうと思います。
+          働き方、技術、金融のジャンルに興味があるので、時間があるときにそれらに関することを書いていこうと思います。
         </div>
         <div className={s["icon-container-aaa"]}>
-          <div className={s["icon-container"]}>
+          {/* <div className={s["icon-container"]}>
             <Link target="_blank" href="https://twitter.com/atukan0930">
               <a target="_blank">
                 <TwitterIcon className={s["twitter-icon"]} />
               </a>
             </Link>
-          </div>
+          </div> */}
           <div className={s["icon-container2"]}>
             <Link target="_blank" href="https://github.com/NaokiKameyama">
               <a target="_blank">

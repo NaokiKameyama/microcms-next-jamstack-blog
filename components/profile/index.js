@@ -85,12 +85,21 @@ export default function Profile({}) {
                     <a
                       target="_blank"
                       rel="noreferrer"
+                      href="https://sql-generator-by-gpt.vercel.app/"
+                    >
+                      SQL Generator
+                    </a>{" "}
+                    　GPTを利用したSLQ自動生成サービスです。
+                    <br /><br />
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
                       href="https://sveltestudy.jp/"
                     >
                       SvelteStudy
                     </a>{" "}
                     　SvelteというJavaScriptのフレームワークを学習するサービスです。
-                    <br />
+                    <br /><br />
                     <a
                       target="_blank"
                       rel="noreferrer"
