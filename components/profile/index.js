@@ -24,7 +24,8 @@ export default function Profile({}) {
               <br />
               主に「技術、金融、働き方」に関する情報発信をしています。
               <br />
-              (本サイトは、Next.js, TypeScript, microCMS, Vercel等の技術を使って、0から構築しています。)
+              (本サイトは、Next.js, TypeScript, microCMS,
+              Vercel等の技術を使って、0から構築しています。)
               <br />
             </div>
             <div>
@@ -48,7 +49,8 @@ export default function Profile({}) {
                 <tr>
                   <th>職歴</th>
                   <td>
-                    2018年4月 ~ 2021年9月 ソフトバンク株式会社 システムエンジニア
+                    2018年4月 ~ 2021年9月 ソフトバンク株式会社
+                    システムエンジニア
                     <br />
                     2020年2月 ~ 2021年8月 JS-Pro.株式会社 取締役兼CIO
                     <br />
@@ -61,8 +63,7 @@ export default function Profile({}) {
                 </tr>
                 <tr>
                   <th>趣味</th>
-                  <td>プログラミング, 資産運用, 犬
-                  </td>
+                  <td>プログラミング, 資産運用, 犬</td>
                 </tr>
                 <tr>
                   <th>作成したサービス</th>
@@ -90,7 +91,8 @@ export default function Profile({}) {
                       SQL Generator
                     </a>{" "}
                     　GPTを利用したSLQ自動生成サービスです。
-                    <br /><br />
+                    <br />
+                    <br />
                     <a
                       target="_blank"
                       rel="noreferrer"
@@ -99,7 +101,8 @@ export default function Profile({}) {
                       SvelteStudy
                     </a>{" "}
                     　SvelteというJavaScriptのフレームワークを学習するサービスです。
-                    <br /><br />
+                    <br />
+                    <br />
                     <a
                       target="_blank"
                       rel="noreferrer"
@@ -108,12 +111,15 @@ export default function Profile({}) {
                       JS-Pro.(現在サービス停止中)
                     </a>{" "}
                     　JavaScript特化型のオンライン学習サービスです。
-                      このサービスは、TOKYO MXで地上放映されました(<a
+                    このサービスは、TOKYO MXで地上放映されました(
+                    <a
                       target="_blank"
                       rel="noreferrer"
                       href="https://www.youtube.com/watch?v=Hi19AWSqn1M"
-                    >動画
-                    </a>)。
+                    >
+                      動画
+                    </a>
+                    )。
                     <br />
                   </td>
                 </tr>
@@ -151,6 +157,9 @@ export default function Profile({}) {
                     <br />
                     <hr />
                     AWS Certified Cloud Practitioner　2021年取得
+                    <br />
+                    <hr />
+                    JDLA Generative AI TEST 2023 #2　2023年取得
                     <br />
                   </td>
                 </tr>
