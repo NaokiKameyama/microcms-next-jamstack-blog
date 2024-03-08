@@ -22,9 +22,7 @@ export default function Contact({}) {
           <main className={styles.main}>
             <iframe
               className={s["google-form"]}
-              src="https://docs.google.com/forms/d/e/1FAIpQLSf5ogBxiH5UsVuK6hzU57-ihguyAX8ipFYutZy-ubeuqJcgqA/viewform?embedded=true"
-              // marginheight="0"
-              // marginwidth="0"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeVY7FSJCljw6nvvvhcIMDFjr1hffEGdn_m15-t1kj_vzFC9Q/viewform?embedded=true"
             >
               読み込んでいます…
             </iframe>
