@@ -39,12 +39,8 @@ export default function Profile({}) {
                   <td>1993年9月</td>
                 </tr>
                 <tr>
-                  <th>組織</th>
-                  <td>Fintech企業 📱</td>
-                </tr>
-                <tr>
-                  <th>役職</th>
-                  <td>Product Manager🧑‍💻</td>
+                  <th>最終学歴</th>
+                  <td>修士(工学)</td>
                 </tr>
                 <tr>
                   <th>職歴</th>
@@ -52,18 +48,69 @@ export default function Profile({}) {
                     2018年4月 ~ 2021年9月 ソフトバンク株式会社
                     システムエンジニア
                     <br />
+                    <hr />
                     2020年2月 ~ 2021年8月 JS-Pro.株式会社 取締役兼CIO
                     <br />
-                    2021年9月 ~ 現在 Fintech企業 プロダクトマネージャ
+                    <hr />
+                    2021年9月 ~ 現在 PayPay株式会社 プロダクトマネージャ
                   </td>
                 </tr>
                 <tr>
-                  <th>最終学歴</th>
-                  <td>修士(工学)</td>
+                  <th>役職</th>
+                  <td>Product Manager🧑‍💻</td>
+                </tr>
+                <tr>
+                  <th>特許</th>
+                  <td>
+                    認証装置、認証方法、およびプログラム(
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202303012810228842&rel=1#%7B%22category%22%3A%220%22%2C%22keyword%22%3A%22%E4%BA%80%E5%B1%B1%20%E7%9B%B4%E8%B5%B7%22%7D"
+                    >
+                      特許第7403705号
+                    </a>
+                    )
+                    <br />
+                    <hr />
+                    サービス提供装置、サービス提供方法、およびプログラム(
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202403014181258423&rel=1#%7B%22category%22%3A%220%22%2C%22keyword%22%3A%22%E4%BA%80%E5%B1%B1%20%E7%9B%B4%E8%B5%B7%22%7D"
+                    >
+                      特許第7453458号
+                    </a>
+                    )
+                    <br />
+                  </td>
+                </tr>
+                <tr>
+                  <th>公表論文</th>
+                  <td>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://scholar.google.co.jp/citations?hl=ja&user=O1T55MMAAAAJ"
+                    >
+                      Google Scholar
+                    </a>
+                  </td>
                 </tr>
                 <tr>
                   <th>趣味</th>
-                  <td>プログラミング, 資産運用, 犬</td>
+                  <td>
+                    トレンドの技術を使ったWeb,
+                    ネイティブアプリのフルスタック開発
+                    <br />
+                    (最近だと生成AIばかり)
+                    <br />
+                    <hr />
+                    資産運用
+                    <br />
+                    <hr />
+                    犬と戯れる
+                  </td>
                 </tr>
                 <tr>
                   <th>作成したサービス</th>
