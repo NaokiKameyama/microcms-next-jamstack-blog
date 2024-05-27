@@ -137,7 +137,7 @@ export default function Profile({}) {
                     >
                       SQL Generator
                     </a>{" "}
-                    　GPTを利用したSLQ自動生成サービスです。
+                    　GPTを利用したSQL自動生成サービスです。
                     <br />
                     <br />
                     <a
