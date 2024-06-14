@@ -83,6 +83,17 @@ export default function Profile({}) {
                     </a>
                     )
                     <br />
+                    <hr />
+                    情報処理装置、情報処理方法、およびプログラム(
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202403015453519783&rel=1#%7B%22category%22%3A%220%22%2C%22keyword%22%3A%22%E4%BA%80%E5%B1%B1%20%E7%9B%B4%E8%B5%B7%22%7D"
+                    >
+                      特許第7496023号
+                    </a>
+                    )
+                    <br />
                   </td>
                 </tr>
                 <tr>
