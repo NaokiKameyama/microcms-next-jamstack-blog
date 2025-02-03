@@ -49,15 +49,20 @@ export default function Profile({}) {
                     システムエンジニア
                     <br />
                     <hr />
-                    2020年2月 ~ 2021年8月 JS-Pro.株式会社 取締役兼CIO
+                    2020年2月 ~ 2021年8月 JS-Pro.株式会社 共同創業者
                     <br />
                     <hr />
-                    2021年9月 ~ 現在 PayPay株式会社 プロダクトマネージャ
+                    2021年9月 ~ 2025年1月 PayPay株式会社 プロダクトマネージャー
+                    <br />
+                    <hr />
+                    2025年2月 ~ 現在 デジタル庁 プロダクトマネージャー
                   </td>
                 </tr>
                 <tr>
-                  <th>役職</th>
-                  <td>Product Manager🧑‍💻</td>
+                  <th>得意なこと</th>
+                  <td>
+                    新技術を迅速に習得し、実装するスキルを持ち、プロダクトマネジメントスキルとエンジニアリングスキルを統合してサービス開発に取り組めること
+                  </td>
                 </tr>
                 <tr>
                   <th>特許</th>
@@ -172,13 +177,7 @@ export default function Profile({}) {
                     　SvelteというJavaScriptのフレームワークを学習するサービスです。
                     <br />
                     <br />
-                    <a
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://www.js-pro.jp/"
-                    >
-                      JS-Pro.(現在サービス停止中)
-                    </a>{" "}
+                    <a href="#">JS-Pro.(現在サービス停止中)</a>{" "}
                     　JavaScript特化型のオンライン学習サービスです。
                     このサービスは、TOKYO MXで地上放映されました(
                     <a
