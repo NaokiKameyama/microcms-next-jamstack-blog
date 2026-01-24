@@ -29,9 +29,9 @@ export default function HomeSub() {
       <div className={s["sub-container-profile-botom"]}>
         <div className={s["name"]}>亀山 直起</div>
         <div className={s["profile-description"]}>
-          本業でFinTech企業のプロダクトマネージャ、副業でEdTech企業のフルスタックエンジニアをやっています。
+          デジタル庁のプロダクトマネージャーとEdTech企業の取締役CTOをやっています。
           <br />
-          趣味はWebサービス開発やお金の勉強にハマっています。最近
+          趣味はWebサービス開発やお金の勉強にハマっています。過去に
           <a
             target="_blank"
             rel="noreferrer"
@@ -39,7 +39,7 @@ export default function HomeSub() {
           >
             「英単語通知」
           </a>
-          というアプリをリリースしました。
+          というアプリを個人開発でリリースしました。
           <br />
           働き方、技術、金融のジャンルに興味があるので、時間があるときにそれらに関することを書いていこうと思います。
         </div>

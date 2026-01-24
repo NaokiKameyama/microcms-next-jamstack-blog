@@ -82,5 +82,58 @@
       background-color: rgb(255, 255, 255);
       padding: 10px 0 10px 30px;
     }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline-group {
+      position: relative;
+      padding-left: 16px;
+      border-left: 2px solid #ddd;
+    }
+
+    .timeline-period {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 6px;
+      min-width: 140px;
+    }
+
+    .timeline-jobs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .timeline-job {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .company {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .role {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .note {
+      font-size: 11px;
+      color: #999;
+    }
   }
 }

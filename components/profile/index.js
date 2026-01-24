@@ -22,7 +22,7 @@ export default function Profile({}) {
               <br />
               お越し頂きありがとうございます。
               <br />
-              主に「技術、金融、働き方」に関する情報発信をしています。
+              デジタル庁のプロダクトマネージャーとEdTech企業の取締役CTOをやっています。
               <br />
               (本サイトは、Next.js, TypeScript, microCMS,
               Vercel等の技術を使って、0から構築しています。)
@@ -45,17 +45,39 @@ export default function Profile({}) {
                 <tr>
                   <th>職歴</th>
                   <td>
-                    2018年4月 ~ 2021年9月 ソフトバンク株式会社
-                    システムエンジニア
-                    <br />
-                    <hr />
-                    2020年2月 ~ 2021年8月 JS-Pro.株式会社 共同創業者
-                    <br />
-                    <hr />
-                    2021年9月 ~ 2025年1月 PayPay株式会社 プロダクトマネージャー
-                    <br />
-                    <hr />
-                    2025年2月 ~ 現在 デジタル庁 プロダクトマネージャー
+                    <div className={s["timeline"]}>
+                      <div className={s["timeline-group"]}>
+                        <div className={s["timeline-job"]}>
+                          <span className={s["timeline-period"]}>2025年7月 ~ 現在</span>
+                          <span className={s["company"]}>（兼業）株式会社みんがく</span>
+                          <span className={s["role"]}>取締役CTO</span>
+                        </div>
+                        <div className={s["timeline-job"]}>
+                          <span className={s["timeline-period"]}>2025年2月 ~ 現在</span>
+                          <span className={s["company"]}>デジタル庁</span>
+                          <span className={s["role"]}>プロダクトマネージャー</span>
+                        </div>
+                      </div>
+                      <div className={s["timeline-group"]}>
+                        <div className={s["timeline-job"]}>
+                          <span className={s["timeline-period"]}>2021年9月 ~ 2025年1月</span>
+                          <span className={s["company"]}>PayPay株式会社</span>
+                          <span className={s["role"]}>プロダクトマネージャー</span>
+                        </div>
+                      </div>
+                      <div className={s["timeline-group"]}>
+                        <div className={s["timeline-job"]}>
+                          <span className={s["timeline-period"]}>2020年2月 ~ 2021年8月</span>
+                          <span className={s["company"]}>（副業）JS-Pro.株式会社</span>
+                          <span className={s["role"]}>共同創業者</span>
+                        </div>
+                        <div className={s["timeline-job"]}>
+                          <span className={s["timeline-period"]}>2018年4月 ~ 2021年8月</span>
+                          <span className={s["company"]}>ソフトバンク株式会社</span>
+                          <span className={s["role"]}>システムエンジニア</span>
+                        </div>
+                      </div>
+                    </div>
                   </td>
                 </tr>
                 <tr>
