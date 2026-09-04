@@ -1,139 +1,480 @@
 @import "../../styles/index";
+
+// 色は styles/_index.scss の共通パレットを使う
+$accent: $brand-deep;
+$text: $ink;
+$text-sub: $ink-sub;
+$text-mute: $ink-mute;
+$border: $line;
+
 .home {
-  width: 100%;
-  display: inline-flex;
-  padding: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: $column-gap;
   @include s {
     display: block;
   }
 
   .left-container {
-    width: 70%;
-    margin-left: auto;
-    margin-right: 20px;
+    flex: 1;
+    min-width: 0;
     margin-bottom: 30px;
     @include s {
       width: 100%;
-      margin-bottom: 30px;
-    }
-
-    .list-title {
-      font-weight: bold;
-      width: 100%;
-      height: 35px;
-      line-height: 35px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 10px 1px #b2b2b28f;
-      color: white;
-      background: linear-gradient(45deg, #bdb9ff, #67b8ff);
-      // background: #58a9ef;
-      display: inline-flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-    }
-
-    table {
-      margin-top: 40px;
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    table tr {
-      border-bottom: 2px solid rgb(220, 220, 220);
-    }
-
-    table tr:last-child {
-      border-bottom: none;
-    }
-
-    table th {
-      position: relative;
-      text-align: left;
-      width: 25%;
-      // background-color: #52c2d0;
-      // background: linear-gradient(95deg, #75d5ff, #e68eff);
-      // color: white;
-      text-align: center;
-      padding: 10px 0;
-      @include xs {
-        width: 15%;
-      }
-    }
-
-    table th:after {
-      display: block;
-      content: "";
-      width: 0px;
-      height: 0px;
-      position: absolute;
-      top: calc(50% - 10px);
-      right: -10px;
-      border-left: 10px solid #e68eff;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-    }
-
-    table td {
-      text-align: left;
-      width: 70%;
-      text-align: left;
-      background-color: rgb(255, 255, 255);
-      padding: 10px 0 10px 30px;
-    }
-
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .timeline-group {
-      position: relative;
-      padding-left: 16px;
-      border-left: 2px solid #ddd;
-    }
-
-    .timeline-period {
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 6px;
-      min-width: 140px;
-    }
-
-    .timeline-jobs {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .timeline-job {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 8px;
-    }
-
-    .company {
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .role {
-      font-size: 13px;
-      color: #666;
-    }
-
-    .note {
-      font-size: 11px;
-      color: #999;
     }
   }
+}
+
+/* 元デザインのページ見出しバー */
+.list-title {
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  margin: 0 0 20px;
+  border-radius: $radius;
+  box-shadow: $glow;
+  color: #fff;
+  background: $gradient;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- セクション共通 ---------- */
+
+.section {
+  background-color: #fff;
+  border-radius: $radius;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: $shadow-card;
+  @include s {
+    padding: 20px 16px;
+  }
+}
+
+.section-title {
+  font-size: 17px;
+  font-weight: bold;
+  color: $text;
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $border;
+  line-height: 1.4;
+}
+
+.section-description {
+  margin: -8px 0 18px;
+  font-size: 13px;
+  color: $text-mute;
+  line-height: 1.7;
+}
+
+/* ---------- イントロ ---------- */
+
+.intro-lead {
+  margin: 0 0 16px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.8;
+  color: $text;
+}
+
+.intro-body {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 2;
+  color: #4a5262;
+}
+
+.intro-note {
+  margin: 20px 0 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: $text-mute;
+}
+
+/* ---------- 基本情報 ---------- */
+
+.facts {
+  margin: 0;
+}
+
+.fact {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid $border;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  @include xs {
+    display: block;
+  }
+}
+
+.fact-label {
+  flex: 0 0 110px;
+  font-size: 13px;
+  font-weight: bold;
+  color: $text-mute;
+  @include xs {
+    margin-bottom: 4px;
+  }
+}
+
+.fact-value {
+  margin: 0;
+  font-size: 14px;
+  color: $text;
+}
+
+/* ---------- 経歴（ガントチャート） ----------
+   左にラベル列（会社・役職・期間）、右に同じ横軸へ載せたバー。
+   ラベルとバーが同じ行にあるので、視線を動かさずに読める。
+   狭い画面ではラベルの下にバーを積む。
+------------------------------------------- */
+
+$gantt-label-width: 200px;
+
+.gantt-header,
+.gantt-row {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid $border;
+  @include xs {
+    display: block;
+  }
+}
+
+.gantt-header {
+  border-bottom-color: $line-strong;
+}
+
+.gantt-label {
+  flex: 0 0 $gantt-label-width;
+  padding: 14px 16px 14px 0;
+  @include xs {
+    padding: 12px 0 6px;
+  }
+}
+
+.gantt-header .gantt-label {
+  padding: 0;
+  @include xs {
+    display: none;
+  }
+}
+
+.gantt-company {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: $text;
+}
+
+.gantt-note {
+  font-size: 11px;
+  font-weight: normal;
+  color: $text-sub;
+  background-color: #eef1f6;
+  border-radius: 3px;
+  padding: 2px 6px;
+}
+
+.gantt-role {
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: $text-sub;
+}
+
+.gantt-period {
+  margin-top: 2px;
+  font-size: 12px;
+  color: $text-mute;
+  font-variant-numeric: tabular-nums;
+}
+
+.gantt-axis {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 26px;
+}
+
+.gantt-year {
+  position: absolute;
+  top: 4px;
+  font-size: 11px;
+  color: $text-mute;
+  font-variant-numeric: tabular-nums;
+
+  // 狭い画面では 1 年おき（2019, 2021, 2023, 2025 を隠す）
+  @include xs {
+    &:nth-child(even) {
+      display: none;
+    }
+  }
+}
+
+.gantt-track {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 60px;
+  @include xs {
+    min-height: 44px;
+    margin-bottom: 4px;
+  }
+}
+
+/* 年の縦罫。行ごとに全高で引くので、隣の行と繋がって見える */
+.gantt-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  span {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #eef1f6;
+  }
+}
+
+.gantt-bar {
+  position: absolute;
+  top: 50%;
+  height: 26px;
+  transform: translateY(-50%);
+  border-radius: 13px;
+  background: $gradient;
+  box-shadow: 0 2px 6px rgba(103, 184, 255, 0.35);
+  @include xs {
+    height: 22px;
+    border-radius: 11px;
+  }
+}
+
+/* 継続中。右端をフェードさせて「まだ続いている」ことを示す */
+.is-ongoing {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    #000 0,
+    #000 82%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(90deg, #000 0, #000 82%, transparent 100%);
+}
+
+/* ---------- 得意なこと ---------- */
+
+.strengths {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  @include m {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.strength-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: $text;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.strength-body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  color: $text-sub;
+}
+
+/* ---------- 特許 ---------- */
+
+.patents {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.patent {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid $border;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  @include xs {
+    display: block;
+  }
+}
+
+.patent-title {
+  font-size: 14px;
+  line-height: 1.7;
+  color: $text;
+}
+
+.patent-number {
+  flex-shrink: 0;
+  font-size: 12px;
+  white-space: nowrap;
+  @include xs {
+    display: inline-block;
+    margin-top: 6px;
+  }
+}
+
+/* ---------- 公表論文 ---------- */
+
+.scholar-link {
+  font-size: 14px;
+}
+
+/* ---------- つくったもの ---------- */
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  @include s {
+    grid-template-columns: 1fr;
+  }
+}
+
+.work {
+  padding-bottom: 4px;
+}
+
+.work-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.work-platform,
+.work-status {
+  font-size: 11px;
+  color: $text-sub;
+  background-color: #f0f2f6;
+  border-radius: 3px;
+  padding: 3px 8px;
+}
+
+.work-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: $text;
+  margin-bottom: 6px;
+}
+
+.work-description {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  color: $text-sub;
+}
+
+.work-extra {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+/* ---------- 資格 ---------- */
+
+.certifications {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.certification {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid $border;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.certification-year {
+  flex: 0 0 44px;
+  font-size: 12px;
+  color: $text-mute;
+  font-variant-numeric: tabular-nums;
+}
+
+.certification-name {
+  font-size: 13px;
+  color: #4a5262;
+}
+
+/* ---------- 趣味 ---------- */
+
+.hobbies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  @include m {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.hobby-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: $text;
+  margin-bottom: 6px;
+}
+
+.hobby-body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  color: $text-sub;
 }

@@ -1,40 +1,59 @@
 @import "../../styles/index";
+
 .home {
-  width: 100%;
-  display: inline-flex;
-  padding: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: $column-gap;
   @include s {
     display: block;
   }
+
   .left-container {
-    width: 70%;
-    margin-left: auto;
-    margin-right: 20px;
+    flex: 1;
+    min-width: 0;
     margin-bottom: 30px;
     @include s {
       width: 100%;
-      margin-bottom: 30px;
-    }
-    .list-title {
-      font-weight: bold;
-      width: 100%;
-      height: 35px;
-      line-height: 35px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      box-shadow: 0px 0px 10px 1px #b2b2b28f;
-      color: white;
-      background: linear-gradient(45deg, #bdb9ff, #67b8ff);
-      // background: #58a9ef;
-      display: inline-flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-    }
-    .google-form {
-      width: 100%;
-      height: 800px;
-      border: none;
     }
   }
+}
+
+.list-title {
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  margin: 0 0 20px;
+  border-radius: $radius;
+  box-shadow: $glow;
+  color: #fff;
+  background: $gradient;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel {
+  background: $surface;
+  border-radius: $radius;
+  box-shadow: $shadow-card;
+  padding: 24px 28px 20px;
+  @include s {
+    padding: 18px 14px;
+  }
+}
+
+.lead {
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.95;
+  color: $ink-sub;
+}
+
+.google-form {
+  display: block;
+  width: 100%;
+  height: 1100px;
+  border: none;
 }

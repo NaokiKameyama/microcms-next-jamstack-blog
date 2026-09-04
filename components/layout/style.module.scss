@@ -4,8 +4,13 @@
   flex-direction: column;
   min-height: 100vh;
   .base {
+    // flex アイテムの min-width は auto。これを 0 にしないと、
+    // 中身（広いコードブロックや表など）の最小幅がページ全体を横に広げてしまう。
+    min-width: 0;
+    // 幅を明示しないと、flex アイテムである main が中身の最小幅まで広がる
+    width: 100%;
     overflow: hidden;
-    max-width: 1300px;
+    max-width: $content-width;
     margin: 0 auto;
     padding: 0 50px;
     @include s {

@@ -1,0 +1,56 @@
+@import "./index";
+
+.notfound {
+  max-width: 640px;
+  margin: 0 auto 60px;
+  background: $surface;
+  border-radius: $radius;
+  box-shadow: $shadow-card;
+  padding: 56px 40px;
+  text-align: center;
+  @include s {
+    padding: 40px 20px;
+  }
+}
+
+.code {
+  margin: 0;
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  background: $gradient;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.title {
+  margin: 12px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: $ink;
+}
+
+.lead {
+  margin: 10px 0 28px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: $ink-sub;
+}
+
+.back {
+  display: inline-block;
+  padding: 10px 26px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background: $gradient;
+  border-radius: 999px;
+  box-shadow: $glow;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.85;
+  }
+}

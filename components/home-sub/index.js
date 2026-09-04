@@ -1,7 +1,7 @@
 import Link from "next/link";
 import s from "./style.module.scss";
 import Image from "next/image";
-import TwitterIcon from "@material-ui/icons/Twitter";
+import { imageLoader } from "../../libs/imageLoader";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 export default function HomeSub() {
@@ -9,6 +9,7 @@ export default function HomeSub() {
     <div className={s["sub-container"]}>
       <div className={s["sub-container-profile-above"]}>
         <Image
+          loader={imageLoader}
           src="/images/beautiful.jpg"
           alt="My avatar"
           width={750}
@@ -18,6 +19,7 @@ export default function HomeSub() {
       <div className={s["circle-box"]}>
         <div className={s["circle2"]}>
           <Image
+            loader={imageLoader}
             className={s["circle"]}
             src="/images/IMG_8467.jpg"
             alt="My avatar"
@@ -29,9 +31,9 @@ export default function HomeSub() {
       <div className={s["sub-container-profile-botom"]}>
         <div className={s["name"]}>亀山 直起</div>
         <div className={s["profile-description"]}>
-          デジタル庁のプロダクトマネージャーとEdTech企業の取締役CTOをやっています。
-          <br />
-          趣味はWebサービス開発やお金の勉強にハマっています。過去に
+          デジタル庁でプロダクトマネージャー、EdTech企業で取締役CTOをしています。
+          休みの日はWebサービスを作るか、お金の勉強をしていることが多いです。
+          個人開発では
           <a
             target="_blank"
             rel="noreferrer"
@@ -39,18 +41,11 @@ export default function HomeSub() {
           >
             「英単語通知」
           </a>
-          というアプリを個人開発でリリースしました。
+          というアプリをリリースしました。
           <br />
-          働き方、技術、金融のジャンルに興味があるので、時間があるときにそれらに関することを書いていこうと思います。
+          このブログでは、技術・金融・働き方について考えたことを書いています。
         </div>
         <div className={s["icon-container-aaa"]}>
-          {/* <div className={s["icon-container"]}>
-            <Link target="_blank" href="https://twitter.com/atukan0930">
-              <a target="_blank">
-                <TwitterIcon className={s["twitter-icon"]} />
-              </a>
-            </Link>
-          </div> */}
           <div className={s["icon-container2"]}>
             <Link target="_blank" href="https://github.com/NaokiKameyama">
               <a target="_blank">

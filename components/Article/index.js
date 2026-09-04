@@ -1,66 +1,65 @@
 import Link from "next/link";
-// import { client } from "../../libs/client";
-import Head from "next/head";
-import Card from "../card";
-import s from "./style.module.scss";
 import Image from "next/image";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import DoneIcon from "@material-ui/icons/Done";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import { imageLoader } from "../../libs/imageLoader";
 import HomeSub from "../home-sub";
-import styles from "../../styles/Home.module.scss";
+import s from "./style.module.scss";
+import { formatDate } from "../../libs/formatDate";
 import { TwitterFollowButton } from "react-twitter-embed";
 
 export default function Article({ blog, highlightedBody }) {
   return (
-    <div>
-      <div className={s["home"]}>
-        <div className={s["left-container"]}>
-          {/* <div className={s['list-title']}>
-            <DoneIcon />&nbsp;&nbsp;新着記事
-          </div> */}
-          <main className={styles.main}>
+    <div className={s["home"]}>
+      <div className={s["left-container"]}>
+        <article className={s["article"]}>
+          <header className={s["article-header"]}>
+            <div className={s["meta"]}>
+              {blog.category && (
+                <span className={s["category"]}>{blog.category.name}</span>
+              )}
+              <time className={s["published-at"]} dateTime={blog.publishedAt}>
+                {formatDate(blog.publishedAt)}
+              </time>
+            </div>
+            <h1 className={s["title"]}>{blog.title}</h1>
+          </header>
+
+          {blog.image && (
             <div className={s["top-image"]}>
               <Image
+                loader={imageLoader}
                 src={blog.image.url}
                 width={blog.image.width}
                 height={blog.image.height}
-                alt="My avatar"
+                alt=""
               />
             </div>
-            <p className={s["category"]}>
-              {blog.category && `${blog.category.name}`}
-            </p>
-            <h1 className={styles.title}>{blog.title}</h1>
-            <p className={styles.publishedAt}>{blog.publishedAt}</p>
+          )}
+
+          <div
+            className={s["post"]}
+            dangerouslySetInnerHTML={{ __html: `${highlightedBody}` }}
+          />
+          {blog.html && (
             <div
-              dangerouslySetInnerHTML={{
-                __html: `${highlightedBody}`,
-              }}
-              className={styles.post}
+              className={s["post"]}
+              dangerouslySetInnerHTML={{ __html: `${blog.html}` }}
             />
-            {blog.html && (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `${blog.html}`,
-                }}
-                className={styles.post}
+          )}
+
+          <footer className={s["article-footer"]}>
+            <div className={s["follow"]}>
+              <TwitterFollowButton
+                screenName="atukan0930"
+                options={{ size: "large" }}
               />
-            )}
-            <br />
-            <div className={["centerContent"]}>
-              <div className={["selfCenter"]}>
-                <TwitterFollowButton
-                  screenName="atukan0930"
-                  options={{ size: "large" }}
-                />
-              </div>
             </div>
-            <br />
-          </main>
-        </div>
-        <HomeSub />
+            <Link href="/">
+              <a className={s["back-link"]}>← 記事一覧に戻る</a>
+            </Link>
+          </footer>
+        </article>
       </div>
+      <HomeSub />
     </div>
   );
 }

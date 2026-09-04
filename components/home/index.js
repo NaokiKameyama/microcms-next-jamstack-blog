@@ -1,22 +1,22 @@
-import Link from "next/link";
-// import { client } from "../../libs/client";
 import Head from "next/head";
 import Card from "../../components/card";
 import s from "./style.module.scss";
 import Image from "next/image";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import DoneIcon from "@material-ui/icons/Done";
-import GitHubIcon from "@material-ui/icons/GitHub";
+import { imageLoader } from "../../libs/imageLoader";
 import HomeSub from "../../components/home-sub";
 import { useState } from "react";
 
-import {Pagination} from "../../components/pagination"
+const ALL = "新着記事";
 
 export default function Home({ blog, categoryData }) {
-  const [category, setCategory] = useState("新着記事");
+  const [category, setCategory] = useState(ALL);
   const onChange = (value) => {
     setCategory(value);
   };
+  const visibleBlog =
+    category === ALL
+      ? blog
+      : blog.filter((item) => item.category && item.category.name === category);
 
   return (
     <div>
@@ -26,8 +26,9 @@ export default function Home({ blog, categoryData }) {
       <div className={s["top-container"]}>
         <div className={s["top-left-container"]}>
           <Image
+            loader={imageLoader}
             src="/images/undraw_Developer_activity_re_39tg.svg"
-            alt="Picture of the author"
+            alt=""
             width={250}
             height={250}
           />
@@ -35,52 +36,35 @@ export default function Home({ blog, categoryData }) {
         <div className={s["top-right-container"]}>
           <h2>TECH, FINANCE, WORK...</h2>
           <p>
-            技術, 金融,
-            働き方に関する記事を投稿しています。有益な情報をシェアしていきたいです。
+            技術・金融・働き方について書いています。
+            自分が調べて分かったことを、後から読む人の役に立つ形で残していきます。
           </p>
         </div>
       </div>
       <div className={s["home"]}>
         <div className={s["left-container"]}>
           <ul className={s["list-category"]}>
-            <li
-              onClick={() => onChange("新着記事")}
-              className={
-                category == "新着記事" ? s["category"] : s["category2"]
-              }
-            >
-              新着記事
-            </li>
-            {categoryData.map((item) => (
+            {[ALL, ...categoryData.map((item) => item.name)].map((name) => (
               <li
-                key={item.id}
-                onClick={() => onChange(item.name)}
-                className={
-                  category == item.name ? s["category"] : s["category2"]
-                }
+                key={name}
+                onClick={() => onChange(name)}
+                className={category === name ? s["category"] : s["category2"]}
               >
-                {item.name}
+                {name}
               </li>
             ))}
           </ul>
-          <div className={s["blog-card-list-container"]}>
-            {category == "新着記事"
-              ? blog.map((blog) => (
-                  <div className={s["child"]} key={blog.id}>
-                    <Card blog={blog} key={blog.id} />
-                  </div>
-                ))
-              : blog.map((blog) => {
-                  if (blog.category.name != category) {
-                    return;
-                  }
-                  return (
-                    <div className={s["child"]} key={blog.id}>
-                      <Card blog={blog} key={blog.id} />
-                    </div>
-                  );
-                })}
-          </div>
+          {visibleBlog.length > 0 ? (
+            <div className={s["blog-card-list-container"]}>
+              {visibleBlog.map((item) => (
+                <div className={s["child"]} key={item.id}>
+                  <Card blog={item} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className={s["empty"]}>このカテゴリの記事はまだありません。</p>
+          )}
         </div>
         <HomeSub />
       </div>

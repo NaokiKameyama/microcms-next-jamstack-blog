@@ -17,8 +17,12 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6575946142497456"
-     crossOrigin="anonymous"></script>
+          {/* Google AdSense */}
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6575946142497456"
+            crossOrigin="anonymous"
+          />
           {/* Google Tag Manager*/}
           <script
             dangerouslySetInnerHTML={{

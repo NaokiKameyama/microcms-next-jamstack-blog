@@ -1,128 +1,273 @@
 @import "../../styles/index";
+
 .home {
-  width: 100%;
-  display: inline-flex;
-  padding: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: $column-gap;
   @include s {
     display: block;
   }
+
   .left-container {
-    width: 70%;
-    margin-left: auto;
-    margin-right: 20px;
+    flex: 1;
+    min-width: 0;
     @include s {
       width: 100%;
       margin-bottom: 30px;
     }
-    .list-title {
-      width: 100%;
-      height: 60px;
-      line-height: 35px;
-      margin-bottom: 20px;
-      border-radius: 5px 5px;
-      font-size: 30px;
-      box-shadow: 0px 0px 10px 1px #b2b2b28f;
-      color: white;
-      background: linear-gradient(45deg, #bdb9ff, #67b8ff);
-      // background: #58a9ef;
-      display: inline-flex;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
+  }
+}
+
+.article {
+  background: $surface;
+  border-radius: $radius;
+  box-shadow: $shadow-card;
+  padding: 32px 36px 30px;
+  margin-bottom: 30px;
+  @include s {
+    padding: 20px 16px 22px;
+  }
+}
+
+.article-header {
+  margin-bottom: 22px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* 元デザインのグラデーションバッジ */
+.category {
+  padding: 3px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #fff;
+  background: $gradient;
+  border-radius: $radius;
+  box-shadow: $glow;
+}
+
+.published-at {
+  font-size: 13px;
+  color: $ink-mute;
+}
+
+.title {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: $ink;
+  overflow-wrap: break-word;
+  @include s {
+    font-size: 23px;
+  }
+}
+
+.top-image {
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 0;
+
+  img {
+    border-radius: $radius;
+  }
+}
+
+/* ---------- 本文 ---------- */
+
+.post {
+  font-size: 16px;
+  line-height: 2;
+  color: $ink;
+  overflow-wrap: break-word;
+
+  /* 元デザインの「h1 はグラデーションの帯」を踏襲 */
+  > h1 {
+    margin: 44px 0 20px;
+    padding: 10px 20px;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #fff;
+    background: $gradient;
+    border-radius: $radius;
+    @include s {
+      font-size: 21px;
+      padding: 8px 14px;
+      margin-top: 36px;
     }
-    .category {
-      width: 70px;
-      text-align: center;
-      border-radius: 5px;
-      color: white;
-      font-size: 14px;
-      background: linear-gradient(45deg, #bdb9ff, #67b8ff);
-      box-shadow: 0px 0px 10px 1px #b2b2b28f;
+  }
+
+  > h2 {
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid $line;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: $ink;
+    @include s {
+      font-size: 19px;
+      margin-top: 32px;
     }
-    .top-image {
-      text-align: center;
-      img {
-        border-radius: 5px;
+  }
+
+  > h3 {
+    margin: 32px 0 12px;
+    padding-left: 12px;
+    border-left: 4px solid $brand;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: $ink;
+    @include s {
+      font-size: 17px;
+    }
+  }
+
+  > h4,
+  > h5 {
+    margin: 26px 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: $ink;
+  }
+
+  > p {
+    margin: 0 0 22px;
+    letter-spacing: 0.2px;
+
+    > img {
+      display: block;
+      margin: 8px auto;
+      max-width: 70%;
+      border-radius: $radius;
+      @include s {
+        max-width: 90%;
       }
     }
   }
-  .sub-container {
-    margin-left: 30px;
-    height: 610px;
-    width: 30%;
-    background-color: white;
-    .sub-container-profile {
-      .sub-container-profile-above {
-        width: 100%;
-        // height: 190px;
-        // background: linear-gradient(45deg, #bdb9ff, #67b8ff);
-      }
-      .circle-box {
-        height: 30px;
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        .circle {
-          vertical-align: middle;
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          border: solid 3px #fff;
-          margin-top: -50px;
-        }
-      }
+
+  a {
+    color: $brand-deep;
+    overflow-wrap: break-word;
+  }
+
+  > ul,
+  > ol {
+    margin: 0 0 22px;
+    padding-left: 1.6em;
+  }
+
+  > ul {
+    list-style: disc;
+  }
+
+  > ol {
+    list-style: decimal;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  > blockquote {
+    margin: 0 0 22px;
+    padding: 6px 20px;
+    border-left: 4px solid #d5dbe6;
+    background: #f7f9fc;
+    border-radius: 0 $radius $radius 0;
+    color: $ink-sub;
+  }
+
+  img {
+    height: auto;
+  }
+
+  code:not([class]) {
+    padding: 2px 6px;
+    font-size: 0.88em;
+    background: #f1f4f7;
+    border-radius: 3px;
+  }
+
+  /* コードブロックは横に溢れさせずスクロールさせる */
+  > pre {
+    margin: 0 0 24px;
+    padding: 0;
+    border-radius: $radius;
+    overflow: hidden;
+
+    > code {
+      display: block;
+      overflow-x: auto;
+      padding: 16px 18px;
+      font-size: 13.5px;
+      line-height: 1.75;
+      tab-size: 2;
     }
-    .sub-container-profile-botom {
-      padding: 20px;
-      padding-top: 0;
-      height: 360px;
-      background-color: white;
-      .name {
-        padding: 20px;
-        text-align: center;
-        font-size: 25px;
-        font-weight: bold;
-      }
-      .profile-description {
-        a {
-          color: #1da1f2;
-          font-weight: bold;
-        }
-      }
-      .icon-container-aaa {
-        display: flex;
-        justify-content: center;
-        .icon-container {
-          margin: 20px;
-          background-color: #1da1f2;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          .twitter-icon {
-            margin-top: 3px;
-            font-size: 36px;
-            color: white;
-          }
-        }
-        .icon-container2 {
-          margin: 20px;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          .github-icon {
-            margin-top: 3px;
-            font-size: 47px;
-          }
-        }
-      }
+  }
+
+  > table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 0 24px;
+    border-collapse: collapse;
+    font-size: 14px;
+
+    th,
+    td {
+      border: 1px solid $line;
+      padding: 8px 12px;
+      text-align: left;
     }
+
+    th {
+      background: #f5f7fa;
+      font-weight: bold;
+    }
+  }
+
+  > hr {
+    margin: 36px 0;
+    border: 0;
+    border-top: 1px solid $line;
+  }
+}
+
+/* ---------- 記事下 ---------- */
+
+.article-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid $line;
+  text-align: center;
+}
+
+.follow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 9px 22px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background: $gradient;
+  border-radius: 999px;
+  box-shadow: $glow;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.85;
   }
 }
