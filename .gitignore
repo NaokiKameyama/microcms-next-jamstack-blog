@@ -34,3 +34,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# next-sitemap の生成物（ビルド時に public/ へ出力される）
+/public/robots.txt
+/public/sitemap.xml
+/public/sitemap-*.xml
