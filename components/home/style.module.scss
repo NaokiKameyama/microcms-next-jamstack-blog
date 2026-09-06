@@ -135,6 +135,14 @@
   .child {
     min-width: 0;
   }
+
+  /* インフィード広告。カードと同じ列幅に収め、下余白をカードに揃える */
+  .ad-child {
+    margin-bottom: 30px;
+    &:empty {
+      display: none;
+    }
+  }
 }
 
 .empty {

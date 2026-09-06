@@ -8,4 +8,9 @@ module.exports = {
     loader: "custom",
   },
   webpack5: true,
+  // /sitemap.xml は API ルート（pages/api/sitemap.js）で動的生成する。
+  // ビルド後に public/ へ書き出す方式は Vercel が取り込まないため。
+  async rewrites() {
+    return [{ source: "/sitemap.xml", destination: "/api/sitemap" }];
+  },
 };

@@ -4,9 +4,12 @@ import s from "./style.module.scss";
 import Image from "next/image";
 import { imageLoader } from "../../libs/imageLoader";
 import HomeSub from "../../components/home-sub";
-import { useState } from "react";
+import { InFeedAd } from "../../components/AdSense";
+import React, { useState } from "react";
 
 const ALL = "新着記事";
+// インフィード広告を差し込む位置（この枚数の直後）。記事がこれより少なければ末尾。
+const IN_FEED_AFTER = 4;
 
 export default function Home({ blog, categoryData }) {
   const [category, setCategory] = useState(ALL);
@@ -56,10 +59,20 @@ export default function Home({ blog, categoryData }) {
           </ul>
           {visibleBlog.length > 0 ? (
             <div className={s["blog-card-list-container"]}>
-              {visibleBlog.map((item) => (
-                <div className={s["child"]} key={item.id}>
-                  <Card blog={item} />
-                </div>
+              {visibleBlog.map((item, i) => (
+                <React.Fragment key={item.id}>
+                  <div className={s["child"]}>
+                    <Card blog={item} />
+                  </div>
+                  {(i + 1 === IN_FEED_AFTER ||
+                    (visibleBlog.length < IN_FEED_AFTER &&
+                      i + 1 === visibleBlog.length)) && (
+                    <div className={`${s["child"]} ${s["ad-child"]}`}>
+                      {/* key をカテゴリにして、絞り込みのたびに再マウント＝再リクエストさせる */}
+                      <InFeedAd key={`feed-${category}`} />
+                    </div>
+                  )}
+                </React.Fragment>
               ))}
             </div>
           ) : (
