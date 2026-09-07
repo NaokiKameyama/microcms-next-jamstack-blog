@@ -1,7 +1,11 @@
 import Profile from "../components/profile";
 import Seo from "../components/Seo";
 
-export default function ProfilePage() {
+interface Props {
+  now: string;
+}
+
+export default function ProfilePage({ now }: Props) {
   return (
     <>
       <Seo
@@ -11,7 +15,14 @@ export default function ProfilePage() {
         type="profile"
         breadcrumbs={[{ name: "ホーム", path: "/" }, { name: "プロフィール", path: "/profile" }]}
       />
-      <Profile />
+      <Profile now={now} />
     </>
   );
 }
+
+// 経歴グラフの右端「現在」はビルド時の年月（JST）。デプロイのたびに更新される。
+export const getStaticProps = async () => {
+  const jst = new Date(Date.now() + 9 * 60 * 60 * 1000);
+  const now = `${jst.getUTCFullYear()}-${String(jst.getUTCMonth() + 1).padStart(2, "0")}`;
+  return { props: { now } };
+};

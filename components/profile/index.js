@@ -48,27 +48,28 @@ const careers = [
   },
 ];
 
-// 横軸の範囲。右端は継続中の棒がフェードして途切れる位置なので、
-// 年が変わっても AXIS_END を伸ばすだけでよい。
+// 横軸は 2018 年 1 月から「現在」（ビルド時の年月。pages/profile.tsx から渡される）まで。
+// 継続中のバーは右端＝現在にぴったり届かせる。年ラベルは現在の年より前だけ出し、右端に「現在」を置く。
 const AXIS_START = 2018;
-const AXIS_END = 2027;
-const AXIS_MONTHS = (AXIS_END - AXIS_START) * 12;
-const axisYears = Array.from(
-  { length: AXIS_END - AXIS_START },
-  (_, i) => AXIS_START + i
-);
 
 const monthsFromStart = (ym) => {
   const [year, month] = ym.split("-").map(Number);
   return (year - AXIS_START) * 12 + (month - 1);
 };
-const percent = (months) => `${(months / AXIS_MONTHS) * 100}%`;
 
-const barStyle = (career) => {
+const makeAxis = (now) => {
+  const [year, month] = now.split("-").map(Number);
+  const months = (year - AXIS_START) * 12 + month; // 現在の月を含む
+  const years = Array.from({ length: year - AXIS_START }, (_, i) => AXIS_START + i);
+  const percent = (n) => `${(n / months) * 100}%`;
+  return { months, years, percent };
+};
+
+const barStyle = (career, axis) => {
   const from = monthsFromStart(career.start);
-  // 終了月も期間に含めるので +1。継続中は軸の右端まで伸ばす。
-  const to = career.end ? monthsFromStart(career.end) + 1 : AXIS_MONTHS;
-  return { left: percent(from), width: percent(to - from) };
+  // 終了月も期間に含めるので +1。継続中は右端（現在）まで伸ばす。
+  const to = career.end ? monthsFromStart(career.end) + 1 : axis.months;
+  return { left: axis.percent(from), width: axis.percent(to - from) };
 };
 
 const strengths = [
@@ -83,29 +84,6 @@ const strengths = [
   {
     title: "0→1でサービスを立ち上げる",
     body: "個人開発のアプリから会社の事業まで、アイデアを世に出すところまでやりきります。",
-  },
-];
-
-const patents = [
-  {
-    title: "認証装置、認証方法、およびプログラム",
-    number: "特許第7403705号",
-    url: "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202303012810228842&rel=1#%7B%22category%22%3A%220%22%2C%22keyword%22%3A%22%E4%BA%80%E5%B1%B1%20%E7%9B%B4%E8%B5%B7%22%7D",
-  },
-  {
-    title: "サービス提供装置、サービス提供方法、およびプログラム",
-    number: "特許第7453458号",
-    url: "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202403014181258423&rel=1#%7B%22category%22%3A%220%22%2C%22keyword%22%3A%22%E4%BA%80%E5%B1%B1%20%E7%9B%B4%E8%B5%B7%22%7D",
-  },
-  {
-    title: "情報処理装置、情報処理方法、およびプログラム",
-    number: "特許第7496023号",
-    url: "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202403015453519783&rel=1#%7B%22category%22%3A%220%22%2C%22keyword%22%3A%22%E4%BA%80%E5%B1%B1%20%E7%9B%B4%E8%B5%B7%22%7D",
-  },
-  {
-    title: "情報処理装置、情報処理方法、およびプログラム",
-    number: "特許第7529856号",
-    url: "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202403000310344217&rel=1#%7B%22category%22%3A%220%22%2C%22keyword%22%3A%22%E4%BA%80%E5%B1%B1%20%E7%9B%B4%E8%B5%B7%22%7D",
   },
 ];
 
@@ -167,6 +145,79 @@ const hobbies = [
   { label: "犬と戯れる", body: "いちばんの息抜きです。" },
 ];
 
+// 発明者として名前が載っている特許（出願人はいずれも PayPay 株式会社、在籍時の出願）。
+// Google Patents の公報から要約を一行にしたもの。granted が無いものは公開済み・審査中。
+const gp = (n) => `https://patents.google.com/patent/${n}/ja`;
+const patents = [
+  {
+    number: "特許第7403705号",
+    title: "認証装置、認証方法、およびプログラム",
+    filed: "2023-10-17",
+    granted: "2023-12-22",
+    summary:
+      "ワンタイムパスワードのなりすまし対策。認証を要求したアプリと、通知先のアドレスにアクセスしたアプリが同一かを突き合わせて本人を確認する仕組み。",
+    url: gp("JP7403705B1"),
+  },
+  {
+    number: "特許第7453458号",
+    title: "サービス提供装置、サービス提供方法、およびプログラム",
+    filed: "2023-09-06",
+    granted: "2024-03-19",
+    summary:
+      "決済コード画像のスクリーンショット対策。画面キャプチャで複製されたコードを無効化し、そのコードでの利用を不正として検知する仕組み。",
+    url: gp("JP7453458B1"),
+  },
+  {
+    number: "特許第7496023号",
+    title: "情報処理装置、情報処理方法、およびプログラム",
+    filed: "2023-07-24",
+    granted: "2024-06-05",
+    summary:
+      "電子チラシの効果測定。チラシの閲覧履歴と電子決済の履歴を突き合わせ、チラシを見た後に実際にその店で決済したユーザーから効果の指標を導く仕組み。",
+    url: gp("JP7496023B1"),
+  },
+  {
+    number: "特許第7529856号",
+    title: "情報処理装置、情報処理方法、およびプログラム",
+    filed: "2023-06-29",
+    granted: "2024-08-06",
+    summary:
+      "決済直後のアンケート。加盟店で決済したユーザーの決済アプリにその店のアンケートを届け、回答を分析して店に返し、効果のあったアンケートを他の店にも提案する仕組み。",
+    url: gp("JP7529856B1"),
+  },
+  {
+    number: "特許第7783243号",
+    title: "認証装置、認証方法、およびプログラム",
+    filed: "2023-12-13",
+    granted: "2025-12-09",
+    summary:
+      "ログイン時のアプリ確認。ID とパスワードに加えて、認証を要求したアプリの識別情報が事前に登録されたものと一致するかを確認して本人を認証する仕組み。",
+    url: gp("JP7783243B2"),
+  },
+  {
+    number: "特開2025-037780",
+    title: "サービス提供装置、サービス提供方法、およびプログラム",
+    filed: "2024-03-06",
+    summary: "決済コード画像の複製検知と無効化（特許第7453458号の関連出願）。",
+    url: gp("JP2025037780A"),
+  },
+  {
+    number: "特開2025-017309",
+    title: "情報処理装置、情報処理方法、プログラム、および情報処理システム",
+    filed: "2024-05-21",
+    summary: "電子チラシの効果測定（特許第7496023号の関連出願）。",
+    url: gp("JP2025017309A"),
+  },
+  {
+    number: "特開2025-010129",
+    title: "情報処理装置、情報処理方法、およびプログラム",
+    filed: "2024-07-25",
+    summary: "決済直後のアンケート提供と分析（特許第7529856号の関連出願）。",
+    url: gp("JP2025010129A"),
+  },
+];
+const PATENT_NOTE = `登録済み ${patents.filter((p) => p.granted).length} 件、審査中 ${patents.filter((p) => !p.granted).length} 件。いずれも PayPay 在籍時に発明者として出願したものです。`;
+
 function Section({ title, description, children }) {
   return (
     <section className={s["section"]}>
@@ -177,7 +228,8 @@ function Section({ title, description, children }) {
   );
 }
 
-export default function Profile() {
+export default function Profile({ now = "2027-01" }) {
+  const axis = makeAxis(now);
   return (
     <div>
       <div className={s["home"]}>
@@ -220,15 +272,16 @@ export default function Profile() {
               <div className={s["gantt-header"]}>
                 <div className={s["gantt-label"]} aria-hidden="true" />
                 <div className={s["gantt-axis"]}>
-                  {axisYears.map((year) => (
+                  {axis.years.map((year) => (
                     <span
                       key={year}
                       className={s["gantt-year"]}
-                      style={{ left: percent((year - AXIS_START) * 12) }}
+                      style={{ left: axis.percent((year - AXIS_START) * 12) }}
                     >
                       {year}
                     </span>
                   ))}
+                  <span className={s["gantt-now"]}>現在</span>
                 </div>
               </div>
               {careers.map((career) => (
@@ -248,12 +301,13 @@ export default function Profile() {
                   </div>
                   <div className={s["gantt-track"]}>
                     <div className={s["gantt-grid"]} aria-hidden="true">
-                      {axisYears.map((year) => (
+                      {axis.years.map((year) => (
                         <span
                           key={year}
-                          style={{ left: percent((year - AXIS_START) * 12) }}
+                          style={{ left: axis.percent((year - AXIS_START) * 12) }}
                         />
                       ))}
+                      <span className={s["gantt-now-line"]} />
                     </div>
                     <div
                       className={[
@@ -262,7 +316,7 @@ export default function Profile() {
                       ]
                         .filter(Boolean)
                         .join(" ")}
-                      style={barStyle(career)}
+                      style={barStyle(career, axis)}
                     />
                   </div>
                 </div>
@@ -281,22 +335,34 @@ export default function Profile() {
             </div>
           </Section>
 
-          <Section
-            title="特許"
-            description="発明者として登録されている特許です。"
-          >
+          <Section title="特許" description={PATENT_NOTE}>
             <ul className={s["patents"]}>
               {patents.map((patent) => (
                 <li className={s["patent"]} key={patent.number}>
-                  <span className={s["patent-title"]}>{patent.title}</span>
-                  <a
-                    className={s["patent-number"]}
-                    target="_blank"
-                    rel="noreferrer"
-                    href={patent.url}
-                  >
-                    {patent.number}
-                  </a>
+                  <div className={s["patent-head"]}>
+                    <span
+                      className={`${s["patent-status"]} ${
+                        patent.granted ? s["is-granted"] : s["is-pending"]
+                      }`}
+                    >
+                      {patent.granted ? "登録済み" : "審査中"}
+                    </span>
+                    <a
+                      className={s["patent-number"]}
+                      target="_blank"
+                      rel="noreferrer"
+                      href={patent.url}
+                    >
+                      {patent.number}
+                    </a>
+                    <span className={s["patent-date"]}>
+                      {patent.granted ? `登録 ${patent.granted}` : `出願 ${patent.filed}`}
+                    </span>
+                  </div>
+                  <div className={s["patent-title"]}>{patent.title}</div>
+                  {patent.summary && (
+                    <p className={s["patent-summary"]}>{patent.summary}</p>
+                  )}
                 </li>
               ))}
             </ul>
