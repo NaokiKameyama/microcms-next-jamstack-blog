@@ -90,9 +90,97 @@
 }
 
 .published-at,
-.updated-at {
+.updated-at,
+.reading-time {
   font-size: 13px;
   color: $ink-mute;
+}
+
+.tags {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+
+  li {
+    font-size: 12px;
+    color: $ink-sub;
+    background: #f1f4f8;
+    border-radius: 999px;
+    padding: 3px 10px;
+  }
+}
+
+/* 要点ボックス。冒頭で結論をまとめて出す（検索結果・AI の要約に使われる） */
+.key-points {
+  margin: 0 0 30px;
+  padding: 18px 22px;
+  background: $gradient-soft;
+  border-radius: $radius;
+
+  ul {
+    margin: 0;
+    padding-left: 1.4em;
+  }
+
+  li {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: $ink;
+    margin-bottom: 4px;
+  }
+}
+
+.key-points-title {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  color: $brand-deep;
+}
+
+/* FAQ */
+.faq {
+  margin-top: 40px;
+}
+
+.faq-title {
+  margin: 0 0 16px;
+  padding: 10px 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  background: $gradient;
+  border-radius: $radius;
+}
+
+.faq-item {
+  padding: 14px 0;
+  border-bottom: 1px solid $line;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.faq-q {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.6;
+  color: $ink;
+  &::before {
+    content: "Q. ";
+    color: $brand-deep;
+  }
+}
+
+.faq-a {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: $ink;
 }
 
 /* ステマ規制（景表法）対応。アフィリエイトを含む記事に必ず出す */

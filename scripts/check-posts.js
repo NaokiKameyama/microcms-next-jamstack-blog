@@ -36,6 +36,13 @@ function check() {
       if (m[1].startsWith("/") && !fs.existsSync(path.join(__dirname, "..", "public", m[1]))) errors.push(`${file}: 画像 ${m[1]} が public/ にありません`);
     }
     if (/!\[\]\(/.test(post.content)) warnings.push(`${file}: alt テキストが空の画像があります`);
+    // SEO / AIO / LLMO
+    if (post.tags.length === 0) warnings.push(`${file}: tags がありません（検索語を 3〜6 個）`);
+    if (post.charCount >= 1500 && post.keyPoints.length === 0) warnings.push(`${file}: keyPoints（この記事の要点）がありません`);
+    if (!/\]\(\/(blog\/|category\/|profile)/.test(post.content)) warnings.push(`${file}: 内部リンク（記事・カテゴリ・プロフィール）がありません`);
+    const lead = post.content.split(/^## /m)[0].replace(/\s+/g, "");
+    if (lead.length < 80) warnings.push(`${file}: 冒頭（最初の見出しまで）が短すぎます。結論を先に書いてください`);
+    if (post.description.length < 80) warnings.push(`${file}: description が ${post.description.length} 文字（100〜120 推奨）`);
   }
   return { errors, warnings };
 }

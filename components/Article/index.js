@@ -53,8 +53,18 @@ export default function Article({ blog, highlightedBody, related = [] }) {
               {blog.updatedAt && blog.updatedAt.slice(0, 10) !== blog.publishedAt.slice(0, 10) && (
                 <span className={s["updated-at"]}>更新 {formatDate(blog.updatedAt)}</span>
               )}
+              {blog.charCount > 0 && (
+                <span className={s["reading-time"]}>約 {Math.max(1, Math.round(blog.charCount / 600))} 分で読めます</span>
+              )}
             </div>
             <h1 className={s["title"]}>{blog.title}</h1>
+            {blog.tags && blog.tags.length > 0 && (
+              <ul className={s["tags"]} aria-label="タグ">
+                {blog.tags.map((t) => (
+                  <li key={t}>#{t}</li>
+                ))}
+              </ul>
+            )}
             {blog.pr && (
               <p className={s["pr-note"]}>
                 本記事にはアフィリエイト広告（PR）が含まれます。
@@ -68,10 +78,21 @@ export default function Article({ blog, highlightedBody, related = [] }) {
                 src={blog.image.url}
                 width={blog.image.width || undefined}
                 height={blog.image.height || undefined}
-                alt=""
+                alt={blog.title}
                 loading="eager"
               />
             </div>
+          )}
+
+          {blog.keyPoints && blog.keyPoints.length > 0 && (
+            <aside className={s["key-points"]} aria-label="この記事の要点">
+              <p className={s["key-points-title"]}>この記事の要点</p>
+              <ul>
+                {blog.keyPoints.map((k) => (
+                  <li key={k}>{k}</li>
+                ))}
+              </ul>
+            </aside>
           )}
 
           <div
@@ -95,6 +116,18 @@ export default function Article({ blog, highlightedBody, related = [] }) {
               className={s["post"]}
               dangerouslySetInnerHTML={{ __html: `${blog.html}` }}
             />
+          )}
+
+          {blog.faq && blog.faq.length > 0 && (
+            <section className={s["faq"]}>
+              <h2 className={s["faq-title"]}>よくある質問</h2>
+              {blog.faq.map((f) => (
+                <div className={s["faq-item"]} key={f.q}>
+                  <h3 className={s["faq-q"]}>{f.q}</h3>
+                  <p className={s["faq-a"]}>{f.a}</p>
+                </div>
+              ))}
+            </section>
           )}
 
           <div className={s["ad-slot"]}>

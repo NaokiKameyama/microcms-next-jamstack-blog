@@ -1,6 +1,6 @@
 ---
 title: "AirPods(第３世代)が届いたので、早速レビューしてみた。"
-description: "アップルが発売する「AirPods(第3世代)」を購入してみました！ 値段は、23,800円です！ 今回は、AirPods(第3世代)のレビューをお届けします。 まずは見た目 箱はこんな感じです。"
+description: "AirPods（第3世代）を購入して、見た目・装着感・音質・空間オーディオ・バッテリーを第2世代やAirPods Proと比べながらレビューしました。開放型でカナル型が苦手な人におすすめできる理由を書いています。"
 date: "2021-10-26T14:59:45.001Z"
 updated: "2021-10-29T06:28:28.770Z"
 category: "その他"
@@ -8,9 +8,16 @@ image: "/images/posts/mndbducxie/cover.webp"
 imageWidth: 1200
 imageHeight: 509
 pr: true
+tags: ["AirPods", "Apple", "イヤホン", "空間オーディオ", "レビュー", "ガジェット"]
+keyPoints:
+  - "装着感は第 2 世代より安定し、カナル型ではないので長時間つけても気にならない。ただし開放型なので音漏れはする"
+  - "音は広がりが自然でクリア。ド低音は弱めだが開放型としては出ている。空間オーディオで立体的に聞こえる"
+  - "バッテリーは 6 時間駆動（空間オーディオ使用時は最大 5 時間）で歴代最長。ケースはワイヤレス充電に対応"
+  - "カナル型が嫌な人には特におすすめ"
 draft: false
 ---
 
+結論から言うと、AirPods（第 3 世代）は装着感が軽く音がクリアで、カナル型が苦手な人にはとてもおすすめです。
 アップルが発売する「AirPods(第3世代)」を購入してみました！  
 値段は、23,800円です！  
 ![](/images/posts/mndbducxie/image-1.webp)  
@@ -95,3 +102,5 @@ AirPods(第３世代)で、空間オーディオを利用し続けた場合は�
 
 <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=qf_sp_asin_til&t=kamerururu-22&m=amazon&o=9&p=8&l=as1&IS1=1&detail=1&asins=B09JQZ6RQ3&linkId=b8ec557c91f031d49d19bf64b9b181b4&bc1=ffffff&amp;lt1=_blank&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr">
     </iframe>
+
+筆者について、ほかに作ったものは[プロフィール](/profile)にまとめています。

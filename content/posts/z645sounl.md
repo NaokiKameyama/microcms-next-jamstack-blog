@@ -1,6 +1,6 @@
 ---
 title: "2週間でFlutter初心者がアプリ作成して、AppStoreにリリースしてみた。"
-description: "こんにちは。 最近Flutterが流行っているということで、Flutterでアプリ作成して、AppStoreにアプリリリースしてみました。"
+description: "Flutter初心者が2週間で「英単語通知」アプリを作りApp Storeに公開するまでの記録です。Udemyでの学習5日、Firebaseでの実装6日、申請から公開までの流れと、いちばん面倒だった点をまとめました。"
 date: "2021-10-23T13:53:54.553Z"
 updated: "2021-10-23T14:58:48.148Z"
 category: "その他"
@@ -8,6 +8,12 @@ image: "/images/posts/z645sounl/cover.webp"
 imageWidth: 1200
 imageHeight: 676
 pr: false
+tags: ["Flutter", "Firebase", "個人開発", "App Store", "英単語通知", "Push通知"]
+keyPoints:
+  - "Udemy で Flutter を 5 日学び、6 日で実装し、申請から 2 日で App Store に公開された"
+  - "アプリは英単語と意味を定期的に Push 通知するもので、単語の難易度・通知間隔・非通知時間帯を設定できる"
+  - "構成は Firestore に設定を保存し、Cloud Functions で定期的に参照して Cloud Messaging で通知を送る"
+  - "いちばん面倒だったのはアプリのリリース申請"
 draft: false
 ---
 
@@ -80,3 +86,5 @@ FIrebaseCoudMessagingという機能を利用して、Push通知をしていま�
 
 いや〜、AppStoreに自分の成果物が掲載されるのはとても嬉しいですね。  
 今後も、ほしいアプリがあったら作成していこうと思います。
+
+英単語を「続けて覚える」ことの難しさと、AI 時代の学びについては「[AI時代の教育業界で変わること・変わらないこと](/blog/education-industry-in-the-ai-era)」で書いています。

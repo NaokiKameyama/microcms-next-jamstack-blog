@@ -46,11 +46,24 @@ export default function Seo({ title, description, path = "/", image, type = "web
       dateModified: post.updatedAt,
       inLanguage: site.language,
       articleSection: post.category?.name,
-      keywords: post.category?.name,
+      keywords: [...(post.tags || []), post.category?.name].filter(Boolean).join(","),
+      wordCount: post.charCount || undefined,
       author: { "@id": PERSON_ID },
       publisher: { "@id": PERSON_ID },
       mainEntityOfPage: { "@type": "WebPage", "@id": url },
       isPartOf: { "@id": WEBSITE_ID },
+    });
+  }
+  // FAQ を frontmatter に書いた記事は FAQPage としても出す（AI 検索・LLM の抽出に効く）
+  if (post && post.faq && post.faq.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: post.faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     });
   }
   if (breadcrumbs && breadcrumbs.length) {
@@ -92,6 +105,7 @@ export default function Seo({ title, description, path = "/", image, type = "web
       {post && <meta property="article:modified_time" content={post.updatedAt} />}
       {post && <meta property="article:author" content={site.author.url} />}
       {post && post.category && <meta property="article:section" content={post.category.name} />}
+      {post && (post.tags || []).map((t) => <meta key={t} property="article:tag" content={t} />)}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": graph }) }}

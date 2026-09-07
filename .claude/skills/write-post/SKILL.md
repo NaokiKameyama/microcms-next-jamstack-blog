@@ -16,7 +16,7 @@ description: あつかんブログの記事を書く・直す。素材（メモ�
 4. frontmatter を埋める（title / description / date / category / image / pr）
 5. 画像（アイキャッチ `cover.png`・本文の `image-N.png`）を `public/images/posts/<slug>/` に置き、`npm run optimize:images` で WebP 化する（記事内の参照も自動で書き換わる）
 6. `node scripts/check-posts.js` を通す。`npm run dev` で `/blog/<slug>` を確認（開発中は draft も表示される）
-7. 公開するときは `draft: false` にして push
+7. **commit も push もしない**。変更（Changes）のまま止めて報告する。commit と push はユーザーが行う（明示的に頼まれたときだけ代行する）
 
 ## 記事の型
 
@@ -36,6 +36,22 @@ description: あつかんブログの記事を書く・直す。素材（メモ�
 - 断定できることは断定し、推測は「〜と思います」と分ける
 - 金融の記事は末尾に「投資判断はご自身の責任でお願いします」を入れる
 
+## SEO / AIO / LLMO（毎回やる）
+
+ページ単位の対策（title テンプレート、OGP、canonical、JSON-LD の BlogPosting / BreadcrumbList / Person、sitemap、RSS、llms.txt、WebP 画像）は自動。
+記事側でやるのは次の 8 つ。frontmatter に書けば構造化データ・meta・本文への反映は自動で行われる。
+
+1. **title**：検索されそうな語を前半に。32 字以内が目安（40 字まで）
+2. **description**：100〜120 字。結論を含め、記事で何が分かるかを言い切る。title の語を 1 つ以上含める
+3. **冒頭**：最初の見出しの前に、結論を 2〜3 文で言い切る（AI の要約・検索のスニペットはここを使う）
+4. **keyPoints**：3〜5 個。記事の主張を 1 文ずつ。本文の冒頭に「この記事の要点」として表示され、llms-full.txt にも載る
+5. **tags**：3〜6 個。読者が検索する語（技術名・テーマ名）。`keywords` と `article:tag` になる
+6. **faq**（解説・考察型では必須、やってみた型では任意）：2〜3 問。読者が検索窓に打ちそうな質問と、本文の内容だけで答えられる回答。FAQPage の構造化データになる
+7. **見出し**：h2 に検索語を含める。装飾的な見出しだけにしない
+8. **内部リンク**：既存記事へ 1 本以上。関連する記事がなければ、プロフィールや同カテゴリの記事へ
+
+固有名詞・数字・出典を伴う主張は、素材や公開情報で確認できたものだけ書く。確認できない統計は使わない。
+
 ## frontmatter
 
 ```yaml
@@ -46,6 +62,12 @@ category: 技術 | 金融 | 働き方 | その他
 image: /images/posts/<slug>/cover.webp（optimize:images が imageWidth / imageHeight も埋める）
 pr: アフィリエイトリンクを含むなら true（記事上部に PR 表記が出る。法律上必須）
 draft: 下書きなら true
+tags: ["Next.js", "生成AI"]             # 検索語。3〜6 個
+keyPoints:                              # 要点。3〜5 個
+  - "1 文で主張"
+faq:                                    # 任意。2〜3 問
+  - q: "読者が検索しそうな質問？"
+    a: "本文の内容だけで答えられる回答。"
 ```
 
 ## 公開前チェック
@@ -56,4 +78,7 @@ draft: 下書きなら true
 - [ ] 内部リンク（既存記事）を 1 本以上入れた
 - [ ] 画像に alt がある
 - [ ] アフィリエイトがあるなら `pr: true`
-- [ ] `node scripts/check-posts.js` が OK
+- [ ] tags を 3〜6 個、keyPoints を 3〜5 個入れた（解説・考察型は faq も）
+- [ ] 人名・社名・製品名を出す必要があるか確認した（出さない指示があれば機械的にチェック）
+- [ ] `node scripts/check-posts.js` が OK（SEO の注意も 0 にする）
+- [ ] commit していない（Changes のまま報告する）

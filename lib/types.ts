@@ -9,6 +9,10 @@ export interface Post {
   image: { url: string; width: number | null; height: number | null };
   pr: boolean;
   draft: boolean;
+  tags: string[];
+  keyPoints: string[];
+  faq: { q: string; a: string }[];
+  charCount: number;
 }
 export interface Category {
   id: string;

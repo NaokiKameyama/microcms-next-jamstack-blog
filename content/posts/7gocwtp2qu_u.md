@@ -1,6 +1,6 @@
 ---
 title: "【TypeScript】型付けしてエラーを片付ける"
-description: "この記事の目的 TypeScriptを使うとJavaScriptで発生する予期せぬバグが減るっていわれてるけど、具体的にどのようなケースでエラーが減るの？という疑問を具体的な例で解決する。"
+description: "TypeScriptを使うとJavaScriptのバグがどう減るのかを、タイプミスの検知と引数の型制約という2つの具体例で説明します。JavaScriptでは黙って通るコードが、TypeScriptではコーディング中に指摘されます。"
 date: "2021-10-09T21:03:08.293Z"
 updated: "2021-10-24T12:11:24.665Z"
 category: "技術"
@@ -8,8 +8,15 @@ image: "/images/posts/7gocwtp2qu_u/cover.webp"
 imageWidth: 304
 imageHeight: 166
 pr: false
+tags: ["TypeScript", "JavaScript", "型定義", "静的型付け", "VSCode"]
+keyPoints:
+  - "JavaScript ではプロパティ名のタイプミスが undefined として黙って通るが、TypeScript はコーディング中に指摘してくれる"
+  - "引数に型を付けると、数値を期待する関数に文字列が渡されて \"1\" + \"2\" = \"12\" になるようなバグを実行前に防げる"
+  - "型付けはエラーに早く気づけるだけでなく、バグを含むコードを commit するリスクと手戻りを減らす"
 draft: false
 ---
+
+TypeScript を使うと JavaScript の予期せぬバグが減る、と言われます。この記事では「具体的にどんなケースで減るのか」を、プロパティ名のタイプミスと、関数の引数に違う型が渡されるケースの 2 つで示します。どちらも JavaScript では黙って通り、TypeScript ではコーディング中に指摘されます。
 
 ## この記事の目的
 
@@ -148,3 +155,5 @@ sum(1, "2"); //Argument of type 'string' is not assignable to parameter of type 
 TypeScriptを使えば、エラーに迅速に気づけますし、バグを含んだコードをcommitするリスクも低減されるので手戻り工数も削減されます。  
   
 それでは、よいTypeScriptライフを！
+
+TypeScript が必要な理由の全体像は「[なぜTypeScriptが必要なのか？](/blog/r5y-oo3lj2d)」、関数の型付けをどこまでやるかは「[TypeScriptで関数をガッチガチにするまでのロードマップ](/blog/fkticc-lsi)」で書いています。

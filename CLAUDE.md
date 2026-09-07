@@ -2,6 +2,11 @@
 
 Next.js 11（pages router）+ Markdown 記事。Vercel にデプロイ。
 
+## ルール
+
+- **commit / push はしない**。変更は Changes のまま残して報告する。ユーザーが明示的に頼んだときだけ代行する
+- 記事は `.claude/skills/write-post/SKILL.md` の手順に従う（SEO / AIO / LLMO の項目を毎回満たす）
+
 ## コマンド
 
 - 開発: `NODE_OPTIONS=--openssl-legacy-provider npm run dev`（Node 18+ ではこのフラグが必須）

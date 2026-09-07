@@ -7,8 +7,15 @@ image: "/images/posts/microcms-to-markdown-claude-code/cover.webp"
 imageWidth: 1200
 imageHeight: 630
 pr: false
+tags: ["Next.js", "microCMS", "Markdown", "Claude Code", "Vercel", "ブログ移行"]
+keyPoints:
+  - "microCMS の 12 記事をリポジトリ内の Markdown に移し、Claude Code が記事を書いて git push で公開できる体制にした"
+  - "URL は /blog/<記事ID> のまま維持し、画像 51 枚をローカルに取り込み、全記事で本文が一致することを機械的に確認した"
+  - "ハマったのは &nbsp; のインデント、~ の取り消し線、日本語の画像ファイル名、Vercel が postbuild の public/ を配信しない、TypeScript の props 推論の 5 点"
 draft: false
 ---
+
+結論から書くと、ブログの記事を microCMS からリポジトリ内の Markdown に移し、Claude Code が記事を書いて `git push` で公開できる体制にしました。URL は変えず、12 記事・画像 51 枚を機械的に検証しながら移しています。変換でハマった 5 点と、移行後の書き方をまとめます。
 
 ## なぜ microCMS をやめたのか
 

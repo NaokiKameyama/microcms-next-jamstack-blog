@@ -31,7 +31,7 @@ export default function handler(req, res) {
   ];
   if (full) {
     for (const p of posts) {
-      lines.push("", "---", "", `# ${p.title}`, "", `- URL: ${site.url}/blog/${p.id}`, `- 公開: ${p.publishedAt.slice(0, 10)}`, `- 更新: ${p.updatedAt.slice(0, 10)}`, `- カテゴリ: ${p.category.name}`, `- 要約: ${p.description}`, "", p.content.trim());
+      lines.push("", "---", "", `# ${p.title}`, "", `- URL: ${site.url}/blog/${p.id}`, `- 公開: ${p.publishedAt.slice(0, 10)}`, `- 更新: ${p.updatedAt.slice(0, 10)}`, `- カテゴリ: ${p.category.name}`, p.tags.length ? `- タグ: ${p.tags.join(", ")}` : null, `- 要約: ${p.description}`, ...(p.keyPoints.length ? ["- 要点:", ...p.keyPoints.map((k) => `  - ${k}`)] : []), "", p.content.trim());
     }
   }
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
