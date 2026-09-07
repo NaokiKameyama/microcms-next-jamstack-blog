@@ -33,6 +33,44 @@
   margin-bottom: 22px;
 }
 
+/* パンくず。記事タイトルは省略して 1 行に収める */
+.breadcrumb {
+  margin-bottom: 14px;
+  font-size: 12px;
+  color: $ink-mute;
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  li {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    & + li::before {
+      content: "›";
+      margin: 0 8px;
+      color: #c4c9d4;
+    }
+  }
+
+  a {
+    color: $ink-sub;
+    text-decoration: none;
+    &:hover {
+      color: $brand-deep;
+      text-decoration: underline;
+    }
+  }
+}
+
 .meta {
   display: flex;
   align-items: center;
@@ -99,51 +137,50 @@
   color: $ink;
   overflow-wrap: break-word;
 
-  /* 元デザインの「h1 はグラデーションの帯」を踏襲 */
-  > h1 {
+  /* 見出しは h2 から。h2 = 元デザインのグラデーション帯、h3 = 下線、h4 = 左の青線 */
+  > h2 {
     margin: 44px 0 20px;
     padding: 10px 20px;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     line-height: 1.5;
     color: #fff;
     background: $gradient;
     border-radius: $radius;
     @include s {
-      font-size: 21px;
+      font-size: 20px;
       padding: 8px 14px;
       margin-top: 36px;
     }
   }
 
-  > h2 {
+  > h3 {
     margin: 40px 0 16px;
     padding-bottom: 8px;
     border-bottom: 2px solid $line;
-    font-size: 23px;
+    font-size: 21px;
     font-weight: bold;
     line-height: 1.5;
     color: $ink;
     @include s {
-      font-size: 19px;
+      font-size: 18px;
       margin-top: 32px;
     }
   }
 
-  > h3 {
+  > h4 {
     margin: 32px 0 12px;
     padding-left: 12px;
     border-left: 4px solid $brand;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 1.6;
     color: $ink;
     @include s {
-      font-size: 17px;
+      font-size: 16px;
     }
   }
 
-  > h4,
   > h5 {
     margin: 26px 0 10px;
     font-size: 16px;

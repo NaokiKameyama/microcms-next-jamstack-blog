@@ -23,7 +23,14 @@ function check() {
     }
     if (post.description.length > 120) warnings.push(`${file}: description が ${post.description.length} 文字（120 以内推奨）`);
     if (post.title.length > 40) warnings.push(`${file}: title が ${post.title.length} 文字（32〜40 以内推奨）`);
-    if (!fs.existsSync(path.join(__dirname, "..", "public", post.image.url))) errors.push(`${file}: image ${post.image.url} が public/ にありません`);
+    const coverFile = path.join(__dirname, "..", "public", post.image.url);
+    if (!fs.existsSync(coverFile)) errors.push(`${file}: image ${post.image.url} が public/ にありません`);
+    else {
+      if (!post.image.url.endsWith(".webp")) warnings.push(`${file}: アイキャッチが WebP ではありません。npm run optimize:images を実行してください`);
+      if (fs.statSync(coverFile).size > 300 * 1024) warnings.push(`${file}: アイキャッチが ${Math.round(fs.statSync(coverFile).size / 1024)}KB あります（300KB 以下推奨）`);
+      if (post.image.url.endsWith("/cover.webp") && !fs.existsSync(coverFile.replace(/cover\.webp$/, "cover-600.webp"))) warnings.push(`${file}: 一覧用の cover-600.webp がありません。npm run optimize:images を実行してください`);
+    }
+    if (/^# /m.test(post.content.split(/(```[\s\S]*?```)/g).filter((_, i) => i % 2 === 0).join(""))) warnings.push(`${file}: 本文に h1（# ）があります。見出しは ## から始めてください`);
     if (AFFILIATE.test(post.content) && !post.pr) errors.push(`${file}: アフィリエイトリンクがあるのに pr: true がありません（ステマ規制）`);
     for (const m of post.content.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)) {
       if (m[1].startsWith("/") && !fs.existsSync(path.join(__dirname, "..", "public", m[1]))) errors.push(`${file}: 画像 ${m[1]} が public/ にありません`);

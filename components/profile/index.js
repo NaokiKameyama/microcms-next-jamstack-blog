@@ -1,4 +1,3 @@
-import Head from "next/head";
 import s from "./style.module.scss";
 import HomeSub from "../home-sub";
 
@@ -181,13 +180,6 @@ function Section({ title, description, children }) {
 export default function Profile() {
   return (
     <div>
-      <Head>
-        <title>プロフィール | 亀山 直起</title>
-        <meta
-          name="description"
-          content="亀山直起のプロフィール。デジタル庁のプロダクトマネージャー、株式会社みんがくの取締役CTO。経歴・特許・開発したサービス・保有資格をまとめています。"
-        />
-      </Head>
       <div className={s["home"]}>
         <div className={s["left-container"]}>
           <h1 className={s["list-title"]}>プロフィール</h1>

@@ -32,7 +32,7 @@ title: ${JSON.stringify(title)}
 description: ""
 date: ${JSON.stringify(today)}
 category: ${JSON.stringify(category)}
-image: "/images/posts/${slug}/cover.jpg"
+image: "/images/posts/${slug}/cover.webp"
 pr: false
 draft: true
 ---
@@ -42,4 +42,4 @@ draft: true
 `
 );
 console.log(`作成: content/posts/${slug}.md（draft: true）`);
-console.log(`アイキャッチ: public/images/posts/${slug}/cover.jpg を置いてください`);
+console.log(`アイキャッチ: public/images/posts/${slug}/cover.png（または jpg）を置いて npm run optimize:images を実行してください`);

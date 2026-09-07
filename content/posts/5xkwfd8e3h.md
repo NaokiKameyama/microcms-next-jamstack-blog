@@ -4,7 +4,7 @@ description: "この記事の目的 自分のQiitaの記事のVIew数とLGTM数�
 date: "2021-10-18T02:20:24.765Z"
 updated: "2021-10-18T02:23:24.079Z"
 category: "技術"
-image: "/images/posts/5xkwfd8e3h/cover.png"
+image: "/images/posts/5xkwfd8e3h/cover.webp"
 imageWidth: 800
 imageHeight: 482
 pr: false
@@ -48,7 +48,7 @@ curl -sH 'Authorization: Bearer アクセストークン' \
 パラメータを入力したら、あとは`Terminal` などでにコマンドを貼り付けて実行するだけです！  
 実行すると以下のような情報を取得できます。  
   
-![](/images/posts/5xkwfd8e3h/image-1.png)  
+![](/images/posts/5xkwfd8e3h/image-1.webp)  
 
 ## まとめ
 

@@ -4,7 +4,7 @@ description: "こんには、あつかんです。 この記事を読んでい�
 date: "2021-10-23T13:37:16.659Z"
 updated: "2021-10-23T13:37:57.269Z"
 category: "働き方"
-image: "/images/posts/khnd_a9bphbt/cover.png"
+image: "/images/posts/khnd_a9bphbt/cover.webp"
 imageWidth: 487
 imageHeight: 321
 pr: false
@@ -18,22 +18,22 @@ Macユーザーの方は、かなを漢字に変換する際にエンターを�
 これってかなりめんどくさくないですか？  
 めんどくさいと思っているあなたへ、その解決方法を紹介していこうと思います！  
 
-# 解決方法
+## 解決方法
 
 <span style="color:#454545">まずは、リンゴマークをクリックして、システム環境設定をクリック！！</span>  
-![](/images/posts/khnd_a9bphbt/image-1.png)  
+![](/images/posts/khnd_a9bphbt/image-1.webp)  
   
 <span style="color:#454545">次はこんな画面が表れます。矢印のところをクリックしてみてください。</span>  
-![](/images/posts/khnd_a9bphbt/image-2.png)  
+![](/images/posts/khnd_a9bphbt/image-2.webp)  
   
 <span style="color:#454545">そしてキーボードアイコンをクリックします。</span>  
-![](/images/posts/khnd_a9bphbt/image-3.png)  
+![](/images/posts/khnd_a9bphbt/image-3.webp)  
   
 <span style="color:#454545">キーボードアイコンをクリックすると以下の画面が現れるので、入力ソースってボタンをクリックしてみてください。</span>  
-![](/images/posts/khnd_a9bphbt/image-4.png)  
+![](/images/posts/khnd_a9bphbt/image-4.webp)  
   
 <span style="color:#454545">すると、以下の画面が現れます。その画面にあるWindows風の操作キーのチェック欄をチェックしてください。</span>  
-![](/images/posts/khnd_a9bphbt/image-5.png)  
+![](/images/posts/khnd_a9bphbt/image-5.webp)  
   
 以上です。  
 とても簡単でしたねｗ  

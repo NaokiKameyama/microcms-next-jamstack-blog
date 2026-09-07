@@ -1,6 +1,27 @@
+# 検索エンジン・AI クローラーともに全ページを許可する（プレビュー・API・未完成ページを除く）
 User-agent: *
 Disallow: /preview/
 Disallow: /api/
 Disallow: /blog/page/
+Allow: /
+
+# AI クローラー（明示）
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: CCBot
+Allow: /
 
 Sitemap: https://www.atukan-blog.com/sitemap.xml
+# LLM 向けのサイト案内: https://www.atukan-blog.com/llms.txt

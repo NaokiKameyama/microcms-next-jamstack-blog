@@ -4,31 +4,31 @@ description: "概要 TypeScriptがなぜ必要なのかをざっくりと把握�
 date: "2021-10-16T19:54:25.075Z"
 updated: "2021-10-17T22:16:16.761Z"
 category: "技術"
-image: "/images/posts/r5y-oo3lj2d/cover.jpeg"
-imageWidth: 1280
-imageHeight: 720
+image: "/images/posts/r5y-oo3lj2d/cover.webp"
+imageWidth: 1200
+imageHeight: 675
 pr: false
 draft: false
 ---
 
-# 概要
+## 概要
 
 TypeScriptがなぜ必要なのかをざっくりと把握することを目的とします。  
 
-## 対象者
+### 対象者
 
 TypeScript聞いたことあるけど、なにがいいんだろうと思っている方。  
 
-## JavaScriptの簡単な概要と問題点について
+### JavaScriptの簡単な概要と問題点について
 
 TypeScriptはとJavaScriptのスーパーセット(上位互換)です。JavaScriptでできることはTypeScriptでもできます。  
 TypeScriptという言語はJavaScriptの問題点を補うために生まれました。  
 そのため、まずはじめにJavaScriptの**概要**と**問題点**を簡単に抑えておきましょう。  
-![](/images/posts/r5y-oo3lj2d/image-1.png)  
+![](/images/posts/r5y-oo3lj2d/image-1.webp)  
   
   
 
-## JavaScriptの概要
+### JavaScriptの概要
 
 JavaScript (ECMAScript としても知られています) は、ブラウザ用のスクリプト言語としてその生涯をスタートさせました。  
 JavaScripを利用することで、Webサイトにて複雑な機能を実行することができます。  
@@ -41,7 +41,7 @@ JavaScripを利用することで、Webサイトにて複雑な機能を実行�
 さらには、node.jsを使ってバックエンドをJavaScriptで実装するなど、ブラウザ以外でも利用できるほど普及してきました。  
 最近では、JavaScriptだけを使ってフロントエンドとバックエンドを開発するフルスタックエンジニアがたくさんいます!  
 
-## JavaScriptの問題点
+### JavaScriptの問題点
 
 上記の歴史で発展してきたJavaScriptですが、この言語には実は粗末さがあります。  
 以下にいくつかの例を挙げてみましょう。  
@@ -67,7 +67,7 @@ moji = 10;
 ほとんどのプログラミング言語は、コンパイル中、つまりコードが実行される前に上記のような事象に対してエラーを返却してくれます。  
 ですが、JavaScriptにおいてはこのような**予期しない動作**を許してしまう問題点があります。  
 
-## TypeScriptの特徴
+### TypeScriptの特徴
 
 TypeScriptの最大の特徴は「静的型付け言語」であることです。  
 この特徴により、TypeScriptは**型定義**や**型推論**を行うことができます。  
@@ -89,13 +89,13 @@ mojiという変数は最初にstring型とTypeScriptでは**型推論**され�
 これは型を推論したからこそ検知できたわけです。  
 このようにJavaScriptでは型の矛盾を許していましたが、TypeScriptで矛盾を検知できるため、エラーを未然に防ぐことができます。  
 
-## まとめ
+### まとめ
 
 以上がTypeScriptの特徴の１つである**型推論**についてでした！  
 **型推論**だけでも大いにメリットはありますね。  
 この記事で\`なぜTypeScriptが必要なのか？\`の理解が進みましたら幸いです。  
 今後は**型定義**について紹介していこうと思います。  
 
-### 参考文献
+#### 参考文献
 
 [https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)

@@ -6,6 +6,9 @@ import s from "./style.module.scss";
 import { formatDate } from "../../libs/formatDate";
 import { TwitterFollowButton } from "react-twitter-embed";
 import { InArticleAd } from "../AdSense";
+import { categoryPath } from "../../lib/posts";
+
+const thumbOf = (url) => (url.endsWith("/cover.webp") ? url.replace(/cover\.webp$/, "cover-600.webp") : url);
 
 // 本文 HTML を 2 つ目のトップレベル見出し（h1/h2）の直前で分割する。
 // 見出しは本文直下にあるので、その手前で切れば入れ子のタグを壊さない。
@@ -27,6 +30,19 @@ export default function Article({ blog, highlightedBody, related = [] }) {
       <div className={s["left-container"]}>
         <article className={s["article"]}>
           <header className={s["article-header"]}>
+            <nav className={s["breadcrumb"]} aria-label="パンくずリスト">
+              <ol>
+                <li>
+                  <Link href="/"><a>ホーム</a></Link>
+                </li>
+                {blog.category && (
+                  <li>
+                    <Link href={categoryPath(blog.category.name)}><a>{blog.category.name}</a></Link>
+                  </li>
+                )}
+                <li aria-current="page">{blog.title}</li>
+              </ol>
+            </nav>
             <div className={s["meta"]}>
               {blog.category && (
                 <span className={s["category"]}>{blog.category.name}</span>
@@ -94,7 +110,7 @@ export default function Article({ blog, highlightedBody, related = [] }) {
                     <li key={item.id}>
                       <Link href={`/blog/${item.id}`}>
                         <a className={s["related-link"]}>
-                          <img className={s["related-thumb"]} src={item.image.url} alt="" loading="lazy" />
+                          <img className={s["related-thumb"]} src={thumbOf(item.image.url)} alt="" loading="lazy" decoding="async" width="96" height="60" />
                           <span className={s["related-body"]}>
                             <span className={s["related-name"]}>{item.title}</span>
                             <time className={s["related-date"]} dateTime={item.publishedAt}>

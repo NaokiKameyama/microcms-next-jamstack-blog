@@ -4,7 +4,7 @@ description: "本記事の目的 jsonデータを見やすくする方法を紹�
 date: "2021-10-18T02:28:37.452Z"
 updated: "2021-10-18T02:28:44.135Z"
 category: "技術"
-image: "/images/posts/obue7xt7ef/cover.png"
+image: "/images/posts/obue7xt7ef/cover.webp"
 imageWidth: 710
 imageHeight: 487
 pr: false

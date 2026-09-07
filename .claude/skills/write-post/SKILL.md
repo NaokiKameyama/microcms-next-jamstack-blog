@@ -14,8 +14,9 @@ description: あつかんブログの記事を書く・直す。素材（メモ�
 2. `node scripts/new-post.js <slug> "<タイトル>" [技術|金融|働き方|その他]` で雛形を作る
 3. 型を選んで本文を書く（下の「記事の型」）
 4. frontmatter を埋める（title / description / date / category / image / pr）
-5. `node scripts/check-posts.js` を通す。`npm run dev` で `/blog/<slug>` を確認（開発中は draft も表示される）
-6. 公開するときは `draft: false`。予約したい場合は `date` を未来にする（毎朝 6 時に自動公開）
+5. 画像（アイキャッチ `cover.png`・本文の `image-N.png`）を `public/images/posts/<slug>/` に置き、`npm run optimize:images` で WebP 化する（記事内の参照も自動で書き換わる）
+6. `node scripts/check-posts.js` を通す。`npm run dev` で `/blog/<slug>` を確認（開発中は draft も表示される）
+7. 公開するときは `draft: false` にして push
 
 ## 記事の型
 
@@ -29,7 +30,8 @@ description: あつかんブログの記事を書く・直す。素材（メモ�
 ## 文体
 
 - 「です・ます」。一文は短く、結論を先に
-- 見出しは `##`（h2）を 3〜5 本。h1 は使わない（記事タイトルが h1）
+- 見出しは `##`（h2）を 3〜5 本、小見出しは `###`。h1（`#`）は使わない（記事タイトルが h1）
+- 最初の段落で結論を言い切る（検索結果と AI の要約に使われる）。description と矛盾させない
 - コードは言語指定付きのフェンス（```ts など）。実行結果も載せる
 - 断定できることは断定し、推測は「〜と思います」と分ける
 - 金融の記事は末尾に「投資判断はご自身の責任でお願いします」を入れる
@@ -41,7 +43,7 @@ title: 32 字以内が目安。検索されそうな言葉を前に
 description: 100〜120 字。検索結果に出る。記事で何が分かるかを書く
 date: ISO 形式。未来にすると予約投稿
 category: 技術 | 金融 | 働き方 | その他
-image: /images/posts/<slug>/cover.jpg（imageWidth / imageHeight があると CLS を防げる）
+image: /images/posts/<slug>/cover.webp（optimize:images が imageWidth / imageHeight も埋める）
 pr: アフィリエイトリンクを含むなら true（記事上部に PR 表記が出る。法律上必須）
 draft: 下書きなら true
 ```

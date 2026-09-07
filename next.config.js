@@ -14,8 +14,13 @@ module.exports = {
     config.module.rules.push({ test: /\.md$/, type: "asset/source" });
     return config;
   },
-  // /sitemap.xml は API ルート（pages/api/sitemap.js）で動的生成する
+  // sitemap / RSS / llms.txt は API ルートで動的生成する（ビルド後に public/ へ書く方式は Vercel が取り込まない）
   async rewrites() {
-    return [{ source: "/sitemap.xml", destination: "/api/sitemap" }];
+    return [
+      { source: "/sitemap.xml", destination: "/api/sitemap" },
+      { source: "/feed.xml", destination: "/api/feed" },
+      { source: "/llms.txt", destination: "/api/llms" },
+      { source: "/llms-full.txt", destination: "/api/llms?full=1" },
+    ];
   },
 };

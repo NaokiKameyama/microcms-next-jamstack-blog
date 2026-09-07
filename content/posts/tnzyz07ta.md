@@ -4,7 +4,7 @@ description: "こんにちは、あつかんです。 Macユーザーの方は�
 date: "2021-10-23T13:40:53.970Z"
 updated: "2021-10-23T13:43:03.446Z"
 category: "働き方"
-image: "/images/posts/tnzyz07ta/cover.png"
+image: "/images/posts/tnzyz07ta/cover.webp"
 imageWidth: 479
 imageHeight: 259
 pr: false
@@ -17,19 +17,19 @@ Macユーザーの方はファンクションキーを使用するとき、わ�
    
 そこで、今回はfnキーを押さなくてもファンクションキーを機能させる方法を紹介していこうと思います。  
 
-# 方法
+## 方法
 
 <span style="color:#454545">まずは以下の画像のりんごマークをクリックしてください。</span>  
-![](/images/posts/tnzyz07ta/image-1.png)  
+![](/images/posts/tnzyz07ta/image-1.webp)  
   
 こんな画面が開かれるので矢印のところをクリック  
-![](/images/posts/tnzyz07ta/image-2.png)  
+![](/images/posts/tnzyz07ta/image-2.webp)  
   
 以下の画面が現れるので、キーボードアイコンをクリック  
-![](/images/posts/tnzyz07ta/image-3.png)  
+![](/images/posts/tnzyz07ta/image-3.webp)  
   
 以下の画面の、"F1、F2などのキーを標準のファンクションキーとして使用"という欄にチェックを入れてください。  
-![](/images/posts/tnzyz07ta/image-4.png)  
+![](/images/posts/tnzyz07ta/image-4.webp)  
   
 以上です。  
 簡単でしたね！  

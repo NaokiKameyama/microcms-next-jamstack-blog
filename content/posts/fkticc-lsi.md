@@ -4,21 +4,21 @@ description: "記事の目的 関数の型付けといってもどこまでガ�
 date: "2021-10-24T04:47:37.955Z"
 updated: "2021-10-24T04:47:37.955Z"
 category: "技術"
-image: "/images/posts/fkticc-lsi/cover.png"
-imageWidth: 2264
-imageHeight: 1272
+image: "/images/posts/fkticc-lsi/cover.webp"
+imageWidth: 1200
+imageHeight: 674
 pr: false
 draft: false
 ---
 
-# 記事の目的
+## 記事の目的
 
 関数の型付けといってもどこまでガチガチにやるのか？という議論があると思います。  
 今回はその議論の参考となる記事を書きたいと思い、関数の型付けのレベルを段階に分けて説明していこうと思います。  
 
-# TypeScriptで関数をガッチガチにするまでのロードマップ
+## TypeScriptで関数をガッチガチにするまでのロードマップ
 
-## 第0段階 (型付けなし😱)
+### 第0段階 (型付けなし😱)
 
   
 以下に`x + y` で足し算を行うJavaScriptで定義したadd関数を記述してみました。  
@@ -33,7 +33,7 @@ let add = (x, y) => {
 console.log(add(1,2)); //3
 ```
 
-## 第1段階 (最低限の型付け😀)
+### 第1段階 (最低限の型付け😀)
 
   
 上記のコードに型を追加してみると以下のようになります。  
@@ -48,7 +48,7 @@ let add = (x: number, y: number): number => {
 console.log(add(1,2)); //3
 ```
 
-## 第2段階 (ある程度の型付け😎)
+### 第2段階 (ある程度の型付け😎)
 
   
 add関数は、`２つの数値x,yの引数を持ち、返り値も数値` ということが分かっていたとします。  
@@ -67,7 +67,7 @@ let add: (x: number, y: number) => number = ( //: (x: number, y: number) => numb
 console.log(add(1,2)); //3
 ```
 
-## 第3段階 (良い型付け🤤)
+### 第3段階 (良い型付け🤤)
 
   
 `(x: number, y:number) => number` のxとyの名前は自由に決めることができます。  
@@ -87,7 +87,7 @@ let add: (baseValue: number, increment: number) => number = (
 console.log(add(1,2)); //3
 ```
 
-## 第4段階 (ガッチガチ😈)
+### 第4段階 (ガッチガチ😈)
 
 上記のaddの型はtypeで外だしすることも可能です。  
 こっれにより、addTypeを他の関数に流用することもできますし、コード自体も見やすくなります。
@@ -107,7 +107,7 @@ let add: addType = (
 console.log(add(1,2)); //3
 ```
 
-# まとめ
+## まとめ
 
 以上、TypeScriptで関数をガッチガチにするまでのロードマップでした。  
 型付けするといってもどこまでやるのかという議論があると思いますが、その際にこの記事がお役に立てれば幸いです！

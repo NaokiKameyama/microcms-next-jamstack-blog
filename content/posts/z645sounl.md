@@ -4,9 +4,9 @@ description: "こんにちは。 最近Flutterが流行っているというこ�
 date: "2021-10-23T13:53:54.553Z"
 updated: "2021-10-23T14:58:48.148Z"
 category: "その他"
-image: "/images/posts/z645sounl/cover.png"
-imageWidth: 1240
-imageHeight: 699
+image: "/images/posts/z645sounl/cover.webp"
+imageWidth: 1200
+imageHeight: 676
 pr: false
 draft: false
 ---
@@ -20,7 +20,7 @@ draft: false
 [**英単語通知**](https://apps.apple.com/jp/app/%E8%8B%B1%E5%8D%98%E8%AA%9E%E9%80%9A%E7%9F%A5/id1582213197?uo=4&at=10l8JW&ct=hatenablog)  
 まずはじめにアプリの簡単な紹介をさせてください！  
 
-# アプリ説明
+## アプリ説明
 
 アプリを起動しなくてもプッシュ通知により片手間で英単語を学習できるというアプリです。  
 英単語をひたすら覚えるという学習にはやる気が出ないという方も多いはず。  
@@ -33,7 +33,7 @@ TOEIC頻出単語にも対応しているので、試験対策にもおすすめ
    
 それでは、このアプリを作って、リリースするまでのざっくりな過程をこの記事に記していこうと思います！  
 
-# 1日目 \~ 5日目 (Flutter学習期間)
+## 1日目 \~ 5日目 (Flutter学習期間)
 
 まずはFutterを勉強しよう！ということで、Udemyで学習しました。  
 自分はこのコンテンツで学習しました。
@@ -42,7 +42,7 @@ TOEIC頻出単語にも対応しているので、試験対策にもおすすめ
 
 [www.udemy.com](https://www.udemy.com/course/flutter-bootcamp-with-dart/)  
 
-# 6日目〜12日目 (アプリ作成期間)
+## 6日目〜12日目 (アプリ作成期間)
 
   
  <span style="color:#454545">以下のような構成のアプリを作ろうとまずは設計しました。</span>  
@@ -61,7 +61,7 @@ FIrebaseCoudMessagingという機能を利用して、Push通知をしていま�
    
 このような機能を約6日で作成しました。  
 
-# 12日目〜14日目(アプリリリース期間) 
+## 12日目〜14日目(アプリリリース期間) 
 
 次にアプリリリース開始！となるのですが、ここが結構めんどくさかったです。  
 この記事を参考に勧めました。
@@ -73,10 +73,10 @@ FIrebaseCoudMessagingという機能を利用して、Push通知をしていま�
 12日目に申請してから2日後の14日目にようやく申請が通り、見事AppStoreに自分が作成したアプリが公開されました！！  
 こんなかんじです。  
   
-![](/images/posts/z645sounl/image-1.png)  
+![](/images/posts/z645sounl/image-1.webp)  
 ここに表示されたときは、正直かなり感動しました。。。  
 
-# 最後に
+## 最後に
 
 いや〜、AppStoreに自分の成果物が掲載されるのはとても嬉しいですね。  
 今後も、ほしいアプリがあったら作成していこうと思います。

@@ -4,9 +4,9 @@ description: "モチベーション 学習したニューラルネットワー�
 date: "2021-10-12T16:59:47.792Z"
 updated: "2021-10-16T20:42:54.145Z"
 category: "技術"
-image: "/images/posts/v4ai1w-tim/cover.jpeg"
-imageWidth: 1710
-imageHeight: 962
+image: "/images/posts/v4ai1w-tim/cover.webp"
+imageWidth: 1200
+imageHeight: 675
 pr: false
 draft: false
 ---
@@ -16,13 +16,13 @@ draft: false
 <span style="color:#333333">学習したニューラルネットワークの中身ってどうなっているんだろう？と思ったのがきっかけで本記事を書いてみました。</span>  
 <span style="color:#333333">そのため、ニューラルネットワークの内部状態を観察し、実際に何が起きてるのか理解するために重みを可視化してみました！</span>
 
-![](/images/posts/v4ai1w-tim/image-1.png)
+![](/images/posts/v4ai1w-tim/image-1.webp)
 
 ## 前提
 
 <span style="color:#333333">MNISTの手書き文字を分類するよう学習したネットワークの重みを可視化することでニューラルネットワークの内部状態を観察してみようと思います。</span>  
 <span style="color:#333333">以下の画像では6の画像を入力して、出力ニューロン0\~9の6番目の出力ニューロンの値が一番高いので、入力画像は6であると判断できています。</span>  
-![](/images/posts/v4ai1w-tim/image-2.png)  
+![](/images/posts/v4ai1w-tim/image-2.webp)  
   
 <span style="color:#333333">そのように判断させるためには学習が必要となります。</span>  
 <span style="color:#333333">上記のニューラルネットワークは以下の図で示したような誤差逆伝播法で学習させました。</span>  
@@ -30,7 +30,7 @@ draft: false
 <span style="color:#333333">・ ニューロンの重みWを誤差が小さくなる方向へ推移させる取り組みのこと(誤差小さくする行いをいわゆる</span>**学習**<span style="color:#333333">と呼びます。)</span>  
 <span style="color:#333333">・ 誤差関数の傾きが正なら重みを小さく、傾きが負なら重みを大きくしながら誤差の値を小さくする(誤差が小さくなる方向は、勾配の情報で判断する)</span>  
 <span style="color:#333333">の２点です。</span>  
-![](/images/posts/v4ai1w-tim/image-3.png)
+![](/images/posts/v4ai1w-tim/image-3.webp)
 
 ## 重みの可視化
 
@@ -40,32 +40,32 @@ draft: false
 <span style="color:#333333">左図の最初(0番目)の出力ニューロンへの繋がりと重みだけに注目すると右図のように表現できます。</span>  
 <span style="color:#333333">ここでXは入力画像のピクセル値、Wは重みを表しています。</span>  
   
-![](/images/posts/v4ai1w-tim/image-4.png)  
+![](/images/posts/v4ai1w-tim/image-4.webp)  
   
 <span style="color:#333333">上右図のモデル図を式に近い形で表現すると以下のようになります。</span>  
 <span style="color:#333333">そして、このW1\~W784が重み行列です。(この重み行列のそれぞれの値には0\~255の範囲の数値が入っています。)</span>  
   
-![](/images/posts/v4ai1w-tim/image-5.png)  
+![](/images/posts/v4ai1w-tim/image-5.webp)  
   
 <span style="color:#333333">この構成で訓練したネットワークを例に、最初の出力ニューロンに流れ込む重みを可視化してみます。</span>  
 <span style="color:#333333">このニューロンの役割は数字の0を識別することです。重みが最も低いところが黒(0)、最も高いところが白(255)になるように色をつけます。</span>  
-![](/images/posts/v4ai1w-tim/image-6.png)  
+![](/images/posts/v4ai1w-tim/image-6.webp)  
   
   
 <span style="color:#333333">なにか0のようなもの可視化されましたね。</span>  
 <span style="color:#333333">このように見える理由は、ニューロンが何をしているのかを考えるとより明確になります。このニューロンは0を識別する役割を担っているので、0に対して高い値を、それ以外に対して低い値を出力することをゴールとしています(計算としては以下の図のような行列演算を行っています)。0に対して高い値を出力するには、0の画像の中で明るくなることが多いピクセルに対して高い重みを割り当てます。また、0以外の数字に対して比較的低い値を出力するには、0以外の画像で明るいことが多く、0の画像で暗くなるピクセルに低い重みを割り当てます。重みの図の中心部分が暗くなっているのは、0の画像ではここが大抵ピクセル値0になることが多く、他の数字では大抵明るくなるからです。</span>  
   
-![](/images/posts/v4ai1w-tim/image-7.png)  
+![](/images/posts/v4ai1w-tim/image-7.webp)  
 
 ## 10個の出力ニューロン全てに対する重みを可視化してみる
 
   
 <span style="color:#333333">学習の枚数毎(10000, 100000, 1000000, 10000000枚)に重みを可視化してみました。</span>  
   
-![](/images/posts/v4ai1w-tim/image-8.png)  
-![](/images/posts/v4ai1w-tim/image-9.png)  
-![](/images/posts/v4ai1w-tim/image-10.png)  
-![](/images/posts/v4ai1w-tim/image-11.png)  
+![](/images/posts/v4ai1w-tim/image-8.webp)  
+![](/images/posts/v4ai1w-tim/image-9.webp)  
+![](/images/posts/v4ai1w-tim/image-10.webp)  
+![](/images/posts/v4ai1w-tim/image-11.webp)  
   
   
 <span style="color:#333333">ニューラルネットワークは学習の過程で重みを上記のように変化させています。</span>  

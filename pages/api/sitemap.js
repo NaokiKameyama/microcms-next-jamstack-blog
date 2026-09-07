@@ -1,5 +1,5 @@
 import site from "../../lib/site";
-import { getAllPosts } from "../../lib/posts";
+import { getAllPosts, getCategories, categoryPath } from "../../lib/posts";
 
 // /sitemap.xml の実体（next.config.js の rewrites で割当）。
 // 記事は lib/posts 経由で同梱されているので、リクエスト時にファイルを読まない。
@@ -16,6 +16,7 @@ export default function handler(req, res) {
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...STATIC_PAGES.map((p) => urlTag(p)),
+    ...getCategories(posts).map((c) => urlTag(categoryPath(c))),
     ...posts.map((p) => urlTag(`/blog/${p.id}`, p.updatedAt)),
     "</urlset>",
     "",

@@ -1,7 +1,7 @@
 import "highlight.js/styles/vs2015.css";
 import Article from "../../components/Article";
 import Seo from "../../components/Seo";
-import { getAllPosts, getPost, getRelatedPosts, renderPostHtml } from "../../lib/posts";
+import { getAllPosts, getPost, getRelatedPosts, renderPostHtml, categoryPath } from "../../lib/posts";
 import type { Post } from "../../lib/types";
 
 interface Props {
@@ -19,6 +19,11 @@ const BlogId = ({ blog, highlightedBody, related }: Props) => (
       image={blog.image.url}
       type="article"
       post={blog}
+      breadcrumbs={[
+        { name: "ホーム", path: "/" },
+        { name: blog.category.name, path: categoryPath(blog.category.name) },
+        { name: blog.title, path: `/blog/${blog.id}` },
+      ]}
     />
     <Article blog={blog} highlightedBody={highlightedBody} related={related} />
   </>

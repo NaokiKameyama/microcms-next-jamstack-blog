@@ -4,7 +4,7 @@ description: "この記事の目的 TypeScriptを使うとJavaScriptで発生す
 date: "2021-10-09T21:03:08.293Z"
 updated: "2021-10-24T12:11:24.665Z"
 category: "技術"
-image: "/images/posts/7gocwtp2qu_u/cover.png"
+image: "/images/posts/7gocwtp2qu_u/cover.webp"
 imageWidth: 304
 imageHeight: 166
 pr: false
@@ -64,7 +64,7 @@ console.log(noteBook.colorr); // Property 'colorr' does not exist on type '{ col
 JavaScriptの場合だとタイプミスがあった場合でもundefined が返却されるだけでしたが、TypeScriptの場合はコーディング中に指摘してくれます。  
 エラーとしては、`type '{ color: string; price: number; size: string; }' にはプロパティ 'colorr' が存在しません。colorのことでしょうか？` と出力してくれています。  
 VsCodeでコーディングした場合はこのように指摘してくれます。(ありがたい...!!)  
-![](/images/posts/7gocwtp2qu_u/image-1.png)  
+![](/images/posts/7gocwtp2qu_u/image-1.webp)  
 
 ### ケース2: 静的型付けで変数の型を制約させる
 
@@ -140,7 +140,7 @@ sum(1, "2"); //Argument of type 'string' is not assignable to parameter of type 
 そのとおりですね。とても親切。  
   
 ちなみにVsCode上だとこのようにエラーが表示されます。  
-![](/images/posts/7gocwtp2qu_u/image-2.png)  
+![](/images/posts/7gocwtp2qu_u/image-2.webp)  
 
 ## まとめ
 

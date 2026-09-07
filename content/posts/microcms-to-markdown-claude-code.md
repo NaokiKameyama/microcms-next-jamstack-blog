@@ -3,7 +3,7 @@ title: "microCMSをやめてMarkdown+Claude Codeで書く"
 description: "5年放置したNext.jsブログの記事をmicroCMSからリポジトリ内のMarkdownへ移した手順と、変換・画像・Vercel・型で実際にハマった5点、移行後の執筆フローをまとめます。"
 date: "2026-09-07T01:45:58.414Z"
 category: "技術"
-image: "/images/posts/microcms-to-markdown-claude-code/cover.png"
+image: "/images/posts/microcms-to-markdown-claude-code/cover.webp"
 imageWidth: 1200
 imageHeight: 630
 pr: false

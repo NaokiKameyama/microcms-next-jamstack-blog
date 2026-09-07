@@ -1,17 +1,9 @@
-import Head from "next/head";
 import s from "./style.module.scss";
 import HomeSub from "../home-sub";
 
 export default function Contact() {
   return (
     <div>
-      <Head>
-        <title>お問い合わせ | あつかんブログ</title>
-        <meta
-          name="description"
-          content="あつかんブログへのお問い合わせフォームです。記事へのご指摘やご相談はこちらからお送りください。"
-        />
-      </Head>
       <div className={s["home"]}>
         <div className={s["left-container"]}>
           <h1 className={s["list-title"]}>お問い合わせ</h1>

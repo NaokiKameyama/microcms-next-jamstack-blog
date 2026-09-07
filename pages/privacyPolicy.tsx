@@ -1,18 +1,17 @@
 import React from "react";
-import Head from "next/head";
+import Seo from "../components/Seo";
 import Link from "next/link";
 import s from "../styles/LegalPage.module.scss";
 
 const privacyPolicy: React.FC = () => {
   return (
     <>
-      <Head>
-        <title>プライバシーポリシー | あつかんブログ</title>
-        <meta
-          name="description"
-          content="あつかんブログにおける個人情報の取扱い、アクセス解析ツールおよび広告配信についてのプライバシーポリシーです。"
-        />
-      </Head>
+      <Seo
+        title="プライバシーポリシー"
+        description="あつかんブログにおける個人情報の取扱い、アクセス解析ツールおよび広告配信についてのプライバシーポリシーです。"
+        path="/privacyPolicy"
+        breadcrumbs={[{ name: "ホーム", path: "/" }, { name: "プライバシーポリシー", path: "/privacyPolicy" }]}
+      />
       <div className={s["page"]}>
         <h1>プライバシーポリシー</h1>
       あつかんブログ（以下，「当社」といいます。）は，本ウェブサイト上で提供するサービス（以下,「本サービス」といいます。）における，ユーザーの個人情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。

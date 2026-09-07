@@ -8,6 +8,7 @@ Next.js 11（pages router）+ Markdown 記事。Vercel にデプロイ。
 - ビルド: `NODE_OPTIONS=--openssl-legacy-provider npm run build`
 - 記事の検証: `node scripts/check-posts.js`
 - 新規記事: `node scripts/new-post.js <slug> "<タイトル>" [category]`
+- 画像の WebP 化: `npm run optimize:images`（記事内の参照も書き換える）
 - 依存の追加は `npx yarn@1 add` と `npm i --package-lock-only --legacy-peer-deps` の両方でロックファイルを揃える
 
 ## 記事
@@ -21,4 +22,5 @@ Next.js 11（pages router）+ Markdown 記事。Vercel にデプロイ。
 
 - AdSense: スクリプトは `pages/_document.tsx`、ユニットは `components/AdSense`
 - SEO: `components/Seo`（description / OGP / canonical / JSON-LD）
-- sitemap: `pages/api/sitemap.js`（`/sitemap.xml` に rewrite）、robots: `public/robots.txt`
+- sitemap / RSS / llms.txt: `pages/api/{sitemap,feed,llms}.js`（`next.config.js` の rewrites で割当）、robots: `public/robots.txt`
+- カテゴリページ: `pages/category/[name].tsx`。記事の見出しは h2 から（h1 は記事タイトル）
