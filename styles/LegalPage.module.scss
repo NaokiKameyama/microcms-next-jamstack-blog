@@ -45,4 +45,54 @@
     color: $brand-deep;
     overflow-wrap: break-word;
   }
+
+  p {
+    margin: 0 0 14px;
+  }
+
+  ul {
+    margin: 0 0 16px;
+    padding-left: 1.5em;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  strong {
+    color: $ink;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 0 0 16px;
+  }
+
+  table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    font-size: 13px;
+    line-height: 1.7;
+
+    th,
+    td {
+      border: 1px solid $line;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f5f7fa;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+  }
+
+  .updated {
+    margin-top: 24px;
+    font-size: 13px;
+    color: $ink-mute;
+  }
 }
