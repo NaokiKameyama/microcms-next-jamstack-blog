@@ -20,7 +20,7 @@ const splitBeforeSecondHeading = (html) => {
   return [html, ""];
 };
 
-export default function Article({ blog, highlightedBody }) {
+export default function Article({ blog, highlightedBody, related = [] }) {
   const [bodyHead, bodyTail] = splitBeforeSecondHeading(`${highlightedBody}`);
   return (
     <div className={s["home"]}>
@@ -34,18 +34,26 @@ export default function Article({ blog, highlightedBody }) {
               <time className={s["published-at"]} dateTime={blog.publishedAt}>
                 {formatDate(blog.publishedAt)}
               </time>
+              {blog.updatedAt && blog.updatedAt.slice(0, 10) !== blog.publishedAt.slice(0, 10) && (
+                <span className={s["updated-at"]}>更新 {formatDate(blog.updatedAt)}</span>
+              )}
             </div>
             <h1 className={s["title"]}>{blog.title}</h1>
+            {blog.pr && (
+              <p className={s["pr-note"]}>
+                本記事にはアフィリエイト広告（PR）が含まれます。
+              </p>
+            )}
           </header>
 
           {blog.image && (
             <div className={s["top-image"]}>
-              <Image
-                loader={imageLoader}
+              <img
                 src={blog.image.url}
-                width={blog.image.width}
-                height={blog.image.height}
+                width={blog.image.width || undefined}
+                height={blog.image.height || undefined}
                 alt=""
+                loading="eager"
               />
             </div>
           )}
@@ -78,6 +86,36 @@ export default function Article({ blog, highlightedBody }) {
           </div>
 
           <footer className={s["article-footer"]}>
+            {related.length > 0 && (
+              <section className={s["related"]}>
+                <h2 className={s["related-title"]}>関連記事</h2>
+                <ul className={s["related-list"]}>
+                  {related.map((item) => (
+                    <li key={item.id}>
+                      <Link href={`/blog/${item.id}`}>
+                        <a className={s["related-link"]}>
+                          <img className={s["related-thumb"]} src={item.image.url} alt="" loading="lazy" />
+                          <span className={s["related-body"]}>
+                            <span className={s["related-name"]}>{item.title}</span>
+                            <time className={s["related-date"]} dateTime={item.publishedAt}>
+                              {formatDate(item.publishedAt)}
+                            </time>
+                          </span>
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+            <div className={s["cta"]}>
+              <p className={s["cta-text"]}>
+                プロダクト開発・技術・キャリアに関するご相談や執筆のご依頼を受け付けています。
+              </p>
+              <Link href="/contact">
+                <a className={s["cta-link"]}>お仕事のご相談はこちら</a>
+              </Link>
+            </div>
             <div className={s["follow"]}>
               <TwitterFollowButton
                 screenName="atukan0930"

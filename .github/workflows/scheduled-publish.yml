@@ -1,0 +1,24 @@
+# 予約投稿の仕組み。
+# 記事は date が未来だとビルドに含まれない（lib/posts.js の isPublished）。
+# 毎朝 6:00 JST に Vercel の Deploy Hook を叩いて再ビルドすると、日付が来た記事が公開される。
+#
+# 準備（1 回だけ）:
+#   1. Vercel > Project > Settings > Git > Deploy Hooks で main 用のフックを作成
+#   2. GitHub > Settings > Secrets and variables > Actions に VERCEL_DEPLOY_HOOK_URL として登録
+name: scheduled-publish
+on:
+  schedule:
+    - cron: "0 21 * * *" # 21:00 UTC = 06:00 JST
+  workflow_dispatch:
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deploy
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "VERCEL_DEPLOY_HOOK_URL が未設定のためスキップ"; exit 0
+          fi
+          curl -fsS -X POST "$HOOK" >/dev/null && echo "deploy hook を送信しました"

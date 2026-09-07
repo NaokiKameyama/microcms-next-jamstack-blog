@@ -7,6 +7,8 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
+    "check:posts": "node scripts/check-posts.js",
+    "new:post": "node scripts/new-post.js",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -19,11 +21,11 @@
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "cheerio": "^1.0.0-rc.10",
+    "gray-matter": "4",
     "highlight.js": "^11.2.0",
+    "marked": "4",
     "material-ui": "^1.0.0-beta.47",
-    "microcms-js-sdk": "^1.2.0",
     "next": "11.1.2",
-    "next-sitemap": "^1.6.189",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-twitter-embed": "^3.0.3",
