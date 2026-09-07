@@ -14,7 +14,7 @@ description: あつかんブログの記事を書く・直す。素材（メモ�
 2. `node scripts/new-post.js <slug> "<タイトル>" [技術|金融|働き方|その他]` で雛形を作る
 3. 型を選んで本文を書く（下の「記事の型」）
 4. frontmatter を埋める（title / description / date / category / image / pr）
-5. 画像（アイキャッチ `cover.png`・本文の `image-N.png`）を `public/images/posts/<slug>/` に置き、`npm run optimize:images` で WebP 化する（記事内の参照も自動で書き換わる）
+5. アイキャッチは `npm run cover -- <slug> "タイトル（改行は \n）" "上に置く小さなラベル"` で生成する（サイトのグラデーションに**白文字**。黒文字は視認性が悪いので使わない）。本文の画像は `image-N.png` として同じフォルダに置く。最後に `npm run optimize:images` で WebP 化する（記事内の参照も自動で書き換わる）
 6. `node scripts/check-posts.js` を通す。`npm run dev` で `/blog/<slug>` を確認（開発中は draft も表示される）
 7. **commit も push もしない**。変更（Changes）のまま止めて報告する。commit と push はユーザーが行う（明示的に頼まれたときだけ代行する）
 

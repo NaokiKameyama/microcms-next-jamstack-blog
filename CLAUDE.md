@@ -13,6 +13,7 @@ Next.js 11（pages router）+ Markdown 記事。Vercel にデプロイ。
 - ビルド: `NODE_OPTIONS=--openssl-legacy-provider npm run build`
 - 記事の検証: `node scripts/check-posts.js`
 - 新規記事: `node scripts/new-post.js <slug> "<タイトル>" [category]`
+- アイキャッチ生成: `npm run cover -- <slug> "タイトル" "ラベル"`（白文字・グラデーション）
 - 画像の WebP 化: `npm run optimize:images`（記事内の参照も書き換える）
 - 依存の追加は `npx yarn@1 add` と `npm i --package-lock-only --legacy-peer-deps` の両方でロックファイルを揃える
 
